@@ -1,6 +1,12 @@
+"use-client";
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+
 import './globals.css'
+import ReportComponent from './Report'
+import AddToCard from './AddToCard'
+import { Routes, Route } from 'react-router-dom'
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+          <nav>
+            
+          </nav>
+          {children}
+        </body>
     </html>
   )
 }
