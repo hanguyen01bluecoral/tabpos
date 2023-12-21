@@ -106,9 +106,6 @@ export default function AddToCard() {
                 className="w-[80px] h-[40px] mr-3 mt-3 border-gray-200"
               />
               <Label  htmlFor="terms4" className="absolute  mt-6 ml-[295px] text-sm cursor-pointer">White</Label>
-              {/* <Button className="mt-2 mr-3 bg-slate-white border text-black hover:text-white">Red </Button>
-                  <Button className="mt-2 mr-3 bg-slate-white border text-black hover:text-white">White </Button>
-                  <Button className="mt-2 mr-3 bg-slate-white border text-black hover:text-white">Black </Button> */}
             </div>
           </div>
 
@@ -120,11 +117,8 @@ export default function AddToCard() {
               <Checkbox
                 id="terms8"
                 className="w-[69px] h-[40px] mr-3 mt-3 relative border-gray-200"
-                onChange={handleCheckboxChange}
-                
-                checked={isChecked}
               />{" "}
-              <Label htmlFor="terms8" className={cn("absolute mt-6 ml-7", { 'text-white': isChecked })}>S</Label>
+              <Label htmlFor="terms8" className="absolute mt-6 ml-7">S</Label>
               <Checkbox
                 id="terms5"
                 className="w-[69px] h-[40px] mr-3 mt-3 border-gray-200"

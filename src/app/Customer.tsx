@@ -70,17 +70,14 @@ import { SaveIcon } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 
 const Customer: React.FC = () => {
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
-    setOpen(false);
-  };
   return (
     <div className="w-[400px] ">
       <div className="pt-4 bg-white rounded-xl">
         <p className="ml-3 text-sm font-medium">Customer</p>
         <div className="mb-2 rounded-full w-[405px] h-[44px] bg-[#F7F9FB] flex pt-3 pl-3">
           {/* search customer */}
-          <DropdownMenu open={open} onOpenChange={() => setOpen(!open)}>
+          <DropdownMenu > 
+            {/* open={open} onOpenChange={() => setOpen(!open)} */}
             <DropdownMenuTrigger asChild>
               <div className="flex">
                 <Avatar className="text-center items-center w-5 h-5">
@@ -105,7 +102,7 @@ const Customer: React.FC = () => {
                     viewBox="0 0 15 15"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    onClick={handleClose}
+                    // onClick={handleClose}
                   >
                     <path
                       fill-rule="evenodd"

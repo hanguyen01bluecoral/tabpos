@@ -1,192 +1,35 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Checkbox } from "@/components/ui/checkbox";
 import React from "react";
+import CheckboxWithLabel from "./CheckboxWithLabel";
 
 const NavItems: React.FC = () => {
+  const [isChecked, setIsChecked] = React.useState(false);
+  const handleCheckChange = () => {
+    setIsChecked(!isChecked);
+  };
   return (
-    <div className="w-[735px] h-9 mt-5 flex justify-between overflow-x-auto scrollbar-none">
-      <div className="flex w-[90px] h-[36px] bg-white rounded-lg hover:bg-[#71B02F] hover:text-white">
-        <div className="flex items-center space-x-1">
-          <Checkbox
-            id="nav"
-            className="w-5 h-5 ml-1 rounded-full outline-none border-none bg-gray-200"
-          />
-          <label
-            htmlFor="nav"
-            className="text-xs whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            All item
-          </label>
-        </div>
-      </div>
-      <div className="flex ml-3  w-[110px] h-[36px] bg-white rounded-lg hover:bg-[#71B02F] hover:text-white">
-        <div className="flex items-center space-x-1">
-          <Checkbox
-            id="nav1"
-            className="w-5 h-5 ml-1 rounded-full outline-none border-none bg-gray-200"
-          />
-          <label
-            htmlFor="nav1"
-            className="text-xs whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Best Seller
-          </label>
-        </div>
-      </div>
-      <div className="flex ml-3  w-[90px] h-[36px] bg-white rounded-lg hover:bg-[#71B02F] hover:text-white">
-        <div className="flex items-center space-x-1">
-          <Checkbox
-            id="nav2"
-            className="w-5 h-5 ml-1 rounded-full outline-none border-none bg-gray-200"
-          />
-          <label
-            htmlFor="nav2"
-            className="text-xs whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Offer
-          </label>
-        </div>
-      </div>
-      <div className="flex ml-3  w-[110px] h-[36px] bg-white rounded-lg hover:bg-[#71B02F] hover:text-white">
-        <div className="flex items-center space-x-1">
-          <Checkbox
-            id="nav3"
-            className="w-5 h-5 ml-1 rounded-full outline-none border-none bg-gray-200"
-          />
-          <label
-            htmlFor="nav3"
-            className="text-xs whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Accessories
-          </label>
-        </div>
-      </div>
-      <div className="flex ml-3  w-[90px] h-[36px] bg-white rounded-lg hover:bg-[#71B02F] hover:text-white">
-        <div className="flex items-center space-x-1">
-          <Checkbox
-            id="nav4"
-            className="w-5 h-5 ml-1 rounded-full outline-none border-none bg-gray-200"
-          />
-          <label
-            htmlFor="nav4"
-            className="text-xs whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Hoodies
-          </label>
-        </div>
-      </div>
-      <div className="flex ml-3  w-[90px] h-[36px] bg-white rounded-lg hover:bg-[#71B02F] hover:text-white">
-        <div className="flex items-center space-x-1">
-          <Checkbox
-            id="nav5"
-            className="w-5 h-5 ml-1 rounded-full outline-none border-none bg-gray-200"
-          />
-          <label
-            htmlFor="nav5"
-            className="text-xs whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Caps
-          </label>
-        </div>
-      </div>
-      <div className="flex ml-3  w-[90px] h-[36px] bg-white rounded-lg hover:bg-[#71B02F] hover:text-white">
-        <div className="flex items-center space-x-1">
-          <Checkbox
-            id="nav6"
-            className="w-5 h-5 ml-1 rounded-full outline-none border-none bg-gray-200"
-          />
-          <label
-            htmlFor="nav6"
-            className="text-xs whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Tshirt
-          </label>
-        </div>
-      </div>
-      <div className="flex ml-3  w-[90px] h-[36px] bg-white rounded-lg focus:bg-[#71B02F] hover:text-white">
-        <div className="flex items-center space-x-1">
-          <Checkbox
-            id="nav7"
-            className="w-5 h-5 ml-1 rounded-full outline-none border-none bg-gray-200"
-          />
-          <label
-            htmlFor="nav7"
-            className="text-xs whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Sweter
-          </label>
-        </div>
-      </div>
-      <div className="flex ml-3  w-[90px] h-[36px] bg-white rounded-lg hover:bg-[#71B02F] hover:text-white">
-        <div className="flex items-center space-x-1">
-          <Checkbox
-            id="nav8"
-            className="w-5 h-5 ml-1 rounded-full outline-none border-none bg-gray-200"
-          />
-          <label
-            htmlFor="nav8"
-            className="text-xs whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Sweter
-          </label>
-        </div>
-      </div>
-      <div className="flex ml-3  w-[90px] h-[36px] bg-white rounded-lg hover:bg-[#71B02F] hover:text-white">
-        <div className="flex items-center space-x-1">
-          <Checkbox
-            id="nav9"
-            className="w-5 h-5 ml-1 rounded-full outline-none border-none bg-gray-200"
-          />
-          <label
-            htmlFor="nav9"
-            className="text-xs whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Sweter
-          </label>
-        </div>
-      </div>
-      <div className="flex ml-3  w-[90px] h-[36px] bg-white rounded-lg hover:bg-[#71B02F] hover:text-white">
-        <div className="flex items-center space-x-1">
-          <Checkbox
-            id="nav10"
-            className="w-5 h-5 ml-1 rounded-full outline-none border-none bg-gray-200"
-          />
-          <label
-            htmlFor="nav10"
-            className="text-xs whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Sweter
-          </label>
-        </div>
-      </div>
-      <div className="flex ml-3  w-[90px] h-[36px] bg-white rounded-lg hover:bg-[#71B02F] hover:text-white">
-        <div className="flex items-center space-x-1">
-          <Checkbox
-            id="nav11"
-            className="w-5 h-5 ml-1 rounded-full outline-none border-none bg-gray-200"
-          />
-          <label
-            htmlFor="nav11"
-            className="text-xs whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Sweter
-          </label>
-        </div>
-      </div>
-      <div className="flex ml-3  w-[90px] h-[36px] bg-white rounded-lg hover:bg-[#71B02F] hover:text-white">
-        <div className="flex items-center space-x-1">
-          <Checkbox
-            id="nav12"
-            className="w-5 h-5 ml-1 rounded-full outline-none border-none bg-gray-200"
-          />
-          <label
-            htmlFor="nav12"
-            className="text-xs whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Accessories
-          </label>
-        </div>
-      </div>
+    <div className="w-[100%] h-9 mt-5 flex overflow-x-auto scrollbar-none">      
+      <CheckboxWithLabel id="nav" label="All items" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav1" label="Best Sellers" onChange={handleCheckChange}/>
+      <CheckboxWithLabel id="nav2" label="Offers" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav3" label="Accessories" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav4" label="Hoodies" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav5" label="Caps" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav6" label="Tshirts" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav7" label="Swter" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav8" label="Hoodieszip" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav9" label="Color" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav10" label="Offers" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav11" label="Accessories" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav12" label="Caps" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav13" label="Color" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav14" label="All items" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav15" label="All items" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav16" label="All items" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav17" label="All items" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav18" label="All items" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav19" label="All items" onChange={handleCheckChange} />
     </div>
   );
 };

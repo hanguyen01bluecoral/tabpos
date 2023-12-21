@@ -33,7 +33,7 @@ const Quantity: React.FC = () => {
         </svg>
         <span className="sr-only"></span>
       </button>
-      <div className="flex-1 text-center">
+      <div className="flex-grow-0 text-center">
         <div className="text-sm font-bold tracking-tighter w-[40px] h-full border ml-2">
         {quantity}
         </div>

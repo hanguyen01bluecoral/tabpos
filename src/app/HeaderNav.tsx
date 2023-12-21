@@ -1,17 +1,18 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Command, CommandInput } from "@/components/ui/command";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import React from "react";
 
 const HeaderNav: React.FC = () => {
     return (
-        <div className="w-[735px] h-[45px] mx-3 flex justify-between">
+        <div className="w-[100%] h-[45px] flex ">
         {/* phan trai */}
-        <div className="w-[350px]  z-30 ">
+        <div className="w-[370px]  z-30 ">
           <div className="relative">
             <Command className="rounded-lg  relative">
               <CommandInput placeholder="Search Products..." />
-              <div className="ml-[87%] mt-[-43px] p-3">
+              <div className="ml-[84%] mt-[-43px] p-3">
                 <svg
                   className="text-black"
                   width="19"
@@ -30,17 +31,19 @@ const HeaderNav: React.FC = () => {
           </div>
         </div>
         {/* phan phai */}
-        <div className="flex justify-between">
-          <div className="flex pt-[10px] w-[143px] h-[45px] bg-white">
-            <div className="ml-1 flex">
-              <Avatar className="text-center items-center w-5 h-5">
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
+        <div className="flex justify-between ml-3 w-[100%]">
+          <div className="flex pt-[1px] pl-2 w-[143px] h-[45px] bg-white rounded-sm">
+            <div className="flex items-center space-x-2">
+              <Checkbox id="settable" className="w-[20px] h-[20px] rounded-full border-none bg-slate-200"/>
+              <label
+                htmlFor="settable"
+                className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Set Table
+              </label>
             </div>
-            <p className="ml-2 text-sm mr-30 whitespace-nowrap">Set Table</p>
           </div>
-          <div className="ml-[90px]">
+          <div className="">
             <Select>
               <SelectTrigger className="w-[140px] h-[45px] outline-none border-none bg-white">
                 <SelectValue placeholder="Sort: A - Z" />
