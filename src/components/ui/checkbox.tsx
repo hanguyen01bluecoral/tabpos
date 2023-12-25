@@ -13,6 +13,10 @@ const Checkbox = React.forwardRef<
   const [isChecked, setIsChecked] = React.useState(false);
   const [iscolor, setIsColor] = React.useState('text-black');
 
+  const handleColor = () => {
+    setIsChecked(isChecked)
+  }
+
   const handleCheckChange = () => {
     setIsChecked(!isChecked);
   };

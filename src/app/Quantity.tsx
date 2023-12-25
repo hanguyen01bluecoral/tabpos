@@ -12,6 +12,8 @@ const Quantity: React.FC = () => {
       setQuantity((prevQuantity) => prevQuantity - 1);
     }
   };
+
+  
   return (
     <div className="flex items-center justify-center space-x-5">
       <button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-green-500 hover:text-white h-5 w-5 shrink-0 rounded-full"

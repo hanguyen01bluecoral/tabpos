@@ -7,6 +7,7 @@ const NavItems: React.FC = () => {
   const [isChecked, setIsChecked] = React.useState(false);
   const handleCheckChange = () => {
     setIsChecked(!isChecked);
+    console.log('check');
   };
   return (
     <div className="w-[100%] h-9 mt-5 flex overflow-x-auto scrollbar-none">      
