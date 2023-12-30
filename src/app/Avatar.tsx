@@ -34,12 +34,14 @@ const Avatars: React.FC = () => {
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </div>
+        <a href="#">
         <div className="pb-[60px] py-3 cursor-pointer">
-          <Avatar className="text-center items-center  w-[36px] h-[36px]">
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
+            <Avatar className="text-center items-center  w-[36px] h-[36px]">
+              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
         </div>
+        </a>
       </div>
 
       <div className="h-50% top-0">

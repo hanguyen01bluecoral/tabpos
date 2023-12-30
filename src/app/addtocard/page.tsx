@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import React from "react";
 import { cn } from "@/lib/utils";
 
-export default function AddToCard() {
+export default function AddToCard() {   
   const [isChecked, setIsChecked] = React.useState(false);
   const handleCheckboxChange = () => {
     console.log(isChecked)

@@ -146,7 +146,7 @@ export default function Home() {
   return (
      <nav className="w-[100%] h-screen flex  bg-[#F7F9FB]"> 
           {/* khoi avata */}
-          <div className="w-[5%] pt-[20px] h-screen flex flex-1 flex-col flex-shrink-0 flex-grow-0 justify-between bg-white">
+          <div className="w-[5%] pt-[20px] pl-3 pr-4 h-screen flex flex-1 flex-col flex-shrink-0 flex-grow-0 justify-between bg-white">
             <div className=" pl-2 ">
               <div className="py-2 rounded-none cursor-pointer">
                 <Avatar className="text-center items-center w-[45px] h-[45px] rounded-none">
@@ -177,16 +177,20 @@ export default function Home() {
                 </Avatar>
               </div>
               <div className="py-2 cursor-pointer">
-                <Avatar className="text-center items-center w-[36px] h-[36px]">
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
+                <a href="orderNopaid">
+                  <Avatar className="text-center items-center w-[36px] h-[36px]">
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarFallback>CN</AvatarFallback>
+                  </Avatar>
+                </a>
               </div>
               <div className="py-2 cursor-pointer">
+                <a href="order">
                 <Avatar className="text-center items-center w-[36px] h-[36px]">
                   <AvatarImage src="https://github.com/shadcn.png" />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
+                </a>
               </div>
             </div>
             <div className="pl-2 mt-auto pt-[100%]">
@@ -326,7 +330,7 @@ export default function Home() {
             <div className=" flex-grow ">
               <div className="pt-4 bg-white rounded-xl">
                 <p className="ml-3 text-sm font-medium">Customer</p>
-                <div className="mb-2 rounded-full w-[97%] h-[100] bg-[#F7F9FB] flex  justify-between pt-3 pl-2 mx-auto ">
+                <div className="mb-2 rounded-full w-[97%] h-[100%] bg-[#F7F9FB] flex  justify-between pt-3 pl-2 mx-auto ">
                   {/* search customer */}
                   <DropdownMenu open={open} onOpenChange={() => setOpen(!open)}>
                     <DropdownMenuTrigger asChild>
@@ -340,14 +344,14 @@ export default function Home() {
                         </p>
                       </div>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-[100%] h-[450px]">
+                    <DropdownMenuContent className="w-[100%] h-[470px]">
                       <DropdownMenuLabel>
-                        <div className="w-[100%] flex justify-between border-b-[1px] scrollbar-thin pb-2 ml-6">
+                        <div className="w-[85%] flex justify-between border-b-[1px] scrollbar-thin pb-2 ml-6 mr-0">
                           <p className="pt-2 text-black font-bold text-base">
                             Customer
                           </p>
                           <svg
-                            className="mt-3 mr-10 cursor-pointer"
+                            className="mt-3 mr-0 cursor-pointer"
                             width="15"
                             height="15"
                             viewBox="0 0 15 15"
@@ -370,108 +374,108 @@ export default function Home() {
                             <CommandList>
                               <CommandEmpty>No results found.</CommandEmpty>
                               <CommandGroup heading="">
-                                <CommandItem className="mt-3">
+                                <CommandItem className="mt-3 w-[92%]">
                                   <Avatar className="text-center items-center w-[30px] h-[30px]">
                                     <AvatarImage src="https://github.com/shadcn.png" />
                                     <AvatarFallback>CN</AvatarFallback>
                                   </Avatar>
-                                  <div className="items-center mt-2">
+                                  <div className="items-center mt-1">
                                     <p className="pl-4 text-black font-medium">
                                       Nguyen Le (500 Points)
                                     </p>
                                     <p className="pl-4 text-[9px]">034999902</p>
                                   </div>
                                 </CommandItem>
-                                <CommandItem className="mt-3">
+                                <CommandItem className="mt-0 w-[92%]">
                                   <Avatar className="text-center items-center w-[30px] h-[30px]">
                                     <AvatarImage src="https://github.com/shadcn.png" />
                                     <AvatarFallback>CN</AvatarFallback>
                                   </Avatar>
-                                  <div className="items-center mt-2">
+                                  <div className="items-center mt-1">
                                     <p className="pl-4 text-black font-medium">
                                       Hoàng Dũng(500 Points)
                                     </p>
                                     <p className="pl-4 text-[9px]">034999902</p>
                                   </div>
                                 </CommandItem>
-                                <CommandItem className="mt-3">
+                                <CommandItem className="mt-0 w-[92%]">
                                   <Avatar className="text-center items-center w-[30px] h-[30px]">
                                     <AvatarImage src="https://github.com/shadcn.png" />
                                     <AvatarFallback>CN</AvatarFallback>
                                   </Avatar>
-                                  <div className="items-center mt-2">
+                                  <div className="items-center mt-1">
                                     <p className="pl-4 text-black font-medium">
                                       Nguyen Van Nam (500 Points)
                                     </p>
                                     <p className="pl-4 text-[9px]">034999902</p>
                                   </div>
                                 </CommandItem>
-                                <CommandItem className="mt-3">
+                                <CommandItem className="mt-0 w-[92%]">
                                   <Avatar className="text-center items-center w-[30px] h-[30px]">
                                     <AvatarImage src="https://github.com/shadcn.png" />
                                     <AvatarFallback>CN</AvatarFallback>
                                   </Avatar>
-                                  <div className="items-center mt-2">
+                                  <div className="items-center mt-1">
                                     <p className="pl-4 text-black font-medium">
                                       Hà Linh (500 Points)
                                     </p>
                                     <p className="pl-4 text-[9px]">034999902</p>
                                   </div>
                                 </CommandItem>
-                                <CommandItem className="mt-3">
+                                <CommandItem className="mt-0 w-[92%]">
                                   <Avatar className="text-center items-center w-[30px] h-[30px]">
                                     <AvatarImage src="https://github.com/shadcn.png" />
                                     <AvatarFallback>CN</AvatarFallback>
                                   </Avatar>
-                                  <div className="items-center mt-2">
+                                  <div className="items-center mt-1">
                                     <p className="pl-4 text-black font-medium">
                                       Nguyễn Văn Khôi (500 Points)
                                     </p>
                                     <p className="pl-4 text-[9px]">034999902</p>
                                   </div>
                                 </CommandItem>
-                                <CommandItem className="mt-3">
+                                <CommandItem className="mt-0 w-[92%]">
                                   <Avatar className="text-center items-center w-[30px] h-[30px]">
                                     <AvatarImage src="https://github.com/shadcn.png" />
                                     <AvatarFallback>CN</AvatarFallback>
                                   </Avatar>
-                                  <div className="items-center mt-2">
+                                  <div className="items-center mt-1">
                                     <p className="pl-4 text-black font-medium">
                                       Trần Văn Hùng (500 Points)
                                     </p>
                                     <p className="pl-4 text-[9px]">034999902</p>
                                   </div>
                                 </CommandItem>
-                                <CommandItem className="mt-3">
+                                <CommandItem className="mt-0 w-[92%]">
                                   <Avatar className="text-center items-center w-[30px] h-[30px]">
                                     <AvatarImage src="https://github.com/shadcn.png" />
                                     <AvatarFallback>CN</AvatarFallback>
                                   </Avatar>
-                                  <div className="items-center mt-2">
+                                  <div className="items-center mt-1">
                                     <p className="pl-4 text-black font-medium">
                                       Hoàng Hồng Anh (500 Points)
                                     </p>
                                     <p className="pl-4 text-[9px]">034999902</p>
                                   </div>
                                 </CommandItem>
-                                <CommandItem className="mt-3">
+                                <CommandItem className="mt-0 w-[92%]">
                                   <Avatar className="text-center items-center w-[30px] h-[30px]">
                                     <AvatarImage src="https://github.com/shadcn.png" />
                                     <AvatarFallback>CN</AvatarFallback>
                                   </Avatar>
-                                  <div className="items-center mt-2">
+                                  <div className="items-center mt-1">
                                     <p className="pl-4 text-black font-medium">
                                       Nguyễn Lan Hồng (500 Points)
                                     </p>
                                     <p className="pl-4 text-[9px]">034999902</p>
                                   </div>
                                 </CommandItem>
-                                <CommandItem className="mt-3">
+                                <CommandItem className="mt-0 w-[92%]">
                                   <Avatar className="text-center items-center w-[30px] h-[30px]">
                                     <AvatarImage src="https://github.com/shadcn.png" />
                                     <AvatarFallback>CN</AvatarFallback>
                                   </Avatar>
-                                  <div className="items-center mt-2">
+                                  <div className="items-center mt-1">
                                     <p className="pl-4 text-black font-medium">
                                       Kim Dung (500 Points)
                                     </p>
@@ -738,7 +742,7 @@ export default function Home() {
 
                 {/* table products */}
                 <Table>
-                  {/* <div className="h-[200px] overflow-y-auto scrollbar-none"> */}
+                  <div className="h-[100%] overflow-y-auto scrollbar-none">
 
                   <TableCaption></TableCaption>
                   <TableHeader>
@@ -808,7 +812,7 @@ export default function Home() {
                     </TableRow>
                   
                   </TableBody>
-                  {/* </div> */}
+                  </div>
                 </Table>
               </div>
             </div>
@@ -905,14 +909,14 @@ export default function Home() {
                       </AlertDialogTrigger>
                       <AlertDialogContent>
                         <AlertDialogHeader>
-                          <AlertDialogTitle className="mx-5">
+                          <AlertDialogTitle className="ml-5 mr-10">
                             <div className=" flex justify-between">
                               <p className="pt-2  text-black font-bold text-base">
                                 Shipping
                               </p>
-                              <AlertDialogCancel className="border-none p-0 outline-none ">
+                              <AlertDialogCancel className="border-none p-0 outline-none hover:bg-transparent ">
                                 <svg
-                                  className="mt-3 mr-3 cursor-pointer"
+                                  className="mt-3 mr-1 cursor-pointer"
                                   width="15"
                                   height="15"
                                   viewBox="0 0 15 15"
@@ -1110,9 +1114,9 @@ export default function Home() {
                             <AlertDialogTitle>
                               <div className="flex justify-between">
                                 Apply coupon
-                                <AlertDialogCancel className="border-none p-0">
+                                <AlertDialogCancel className="border-none p-0 hover:bg-transparent">
                                   <svg
-                                    className="mt-3 mr-3 cursor-pointer outline-none border-none"
+                                    className="mt-3 mr-0 cursor-pointer outline-none border-none hover:bg-transparent"
                                     width="15"
                                     height="15"
                                     viewBox="0 0 15 15"
@@ -1130,19 +1134,19 @@ export default function Home() {
                               </div>
                             </AlertDialogTitle>
                             <AlertDialogDescription>
-                              <div className="w-[470px] h-[222px] bg-white rounded-lg mx-auto">
-                                <div className="w-[440px] h-[41px]  mx-4 mt-[10px]  absolute flex justify-between">
+                              <div className="w-[470px] h-[180px] bg-white rounded-lg mx-auto">
+                                <div className="w-[440px] h-[41px]   mt-[10px]  absolute flex justify-between">
                                   <p className="pt-2 text-black font-bold text-sm">
                                     Enter coupon code
                                   </p>
                                 </div>
 
-                                <div className="w-[440px] h-[41px] mx-4 mt-[60px]  absolute flex justify-between">
+                                <div className="w-[470px] h-[41px]  mt-[60px]  absolute flex justify-between">
                                   <Input type="enter" placeholder="Enter" />
                                 </div>
 
-                                <div className="w-[440px] h-[41px] mx-4 mt-[120px]  absolute flex justify-between">
-                                  <Button className="w-[440px] rounded-md">
+                                <div className="w-[470px] h-[41px]  mt-[120px]  absolute flex justify-between">
+                                  <Button className="w-[470px] rounded-md">
                                     Add
                                   </Button>
                                 </div>
@@ -1201,7 +1205,7 @@ export default function Home() {
                                 Note
                                 <AlertDialogCancel className="border-none p-0">
                                   <svg
-                                    className="mt-3 mr-3 cursor-pointer outline-none border-none"
+                                    className="mt-3 mr-0 cursor-pointer outline-none border-none"
                                     width="15"
                                     height="15"
                                     viewBox="0 0 15 15"
@@ -1290,8 +1294,8 @@ export default function Home() {
                               </div>
 
                               <div className="flex justify-between ">
-                                <div className="w-[635px] h-[56px]   mt-[40px]  absolute  flex ">
-                                  <div className="h-full bg-white border  rounded-sm w-[153px] ml-0 pl-0 hover:bg-[#71B02F] hover:text-white">
+                                <div className="w-[650px] h-[56px]   mt-[40px]  absolute  flex ">
+                                  <div className="h-full bg-white border  rounded-sm w-[160px] ml-0 pl-0 hover:bg-[#71B02F] hover:text-white">
                                     <svg
                                       className="ml-2 mt-2 hover:text-white"
                                       width="20"
@@ -1310,7 +1314,7 @@ export default function Home() {
                                     </p>
                                   </div>
 
-                                  <div className="h-full bg-white border  rounded-sm w-[153px] ml-2 pl-0 hover:bg-[#71B02F] hover:text-white">
+                                  <div className="h-full bg-white border  rounded-sm w-[155px] ml-2 pl-0 hover:bg-[#71B02F] hover:text-white">
                                     <svg
                                       className="ml-2 mt-2"
                                       width="20"
@@ -1331,7 +1335,7 @@ export default function Home() {
                                     </p>
                                   </div>
 
-                                  <div className="h-full bg-white border  rounded-sm w-[153px] ml-2 pl-0 hover:bg-[#71B02F] hover:text-white">
+                                  <div className="h-full bg-white border  rounded-sm w-[155px] ml-2 pl-0 hover:bg-[#71B02F] hover:text-white">
                                     <svg
                                       className="ml-2 mt-2"
                                       width="20"
@@ -1350,7 +1354,7 @@ export default function Home() {
                                     </p>
                                   </div>
 
-                                  <div className="h-full bg-white border  rounded-sm w-[153px] ml-2 pl-0 hover:bg-[#71B02F] hover:text-white">
+                                  <div className="h-full bg-white border  rounded-sm w-[155px] ml-2 pl-0 hover:bg-[#71B02F] hover:text-white">
                                     <svg
                                       className="ml-2 mt-2"
                                       width="20"
@@ -1380,7 +1384,7 @@ export default function Home() {
                               </div>
 
                               <div className="flex justify-between ">
-                                <div className="w-[635px] h-[39px]   mt-[140px]  absolute ">
+                                <div className="w-[650px] h-[39px]   mt-[140px]  absolute ">
                                   <Input
                                     type="email"
                                     placeholder="700.000"
@@ -1390,7 +1394,7 @@ export default function Home() {
                               </div>
 
                               <div className="flex justify-between ">
-                                <div className="w-[635px] h-[39px]  mt-[190px]  absolute ">
+                                <div className="w-[650px] h-[39px]  mt-[190px]  absolute ">
                                   <p className="pt-2 text-black font-bold text-sm">
                                     Popular tendered
                                   </p>
@@ -1398,7 +1402,7 @@ export default function Home() {
                               </div>
 
                               <div className="flex justify-between ">
-                                <div className="w-[63px] h-[39px]   mt-[230px]  absolute  flex justify-between">
+                                <div className="w-[650px] h-[39px]   mt-[230px]  absolute  flex justify-between">
                                   <Input
                                     type="email"
                                     placeholder="700.000đ"
@@ -1422,26 +1426,26 @@ export default function Home() {
                                 </div>
                               </div>
 
-                              <div className="flex justify-between ">
-                                <div className="w-[205px] h-[39px]   mt-[270px]   absolute ">
+                              <div className="flex justify-between w-[650px]">
+                                <div className="w-[210px] h-[39px]   mt-[275px]   absolute ">
                                   <p className="pt-2 text-black font-bold text-sm">
                                     Amount to pay
                                   </p>
                                 </div>
-                                <div className="w-[205px] h-[39px]  ml-[233px] mt-[270px]   absolute ">
+                                <div className="w-[210px] h-[39px]  ml-[220px] mt-[275px]   absolute ">
                                   <p className="pt-2 text-black font-bold text-sm">
                                     Paid
                                   </p>
                                 </div>
-                                <div className="w-[205px] h-[39px]  ml-[450px] mt-[270px]   absolute ">
+                                <div className="w-[210px] h-[39px]  ml-[440px] mt-[275px]   absolute ">
                                   <p className="pt-2 text-black font-bold text-sm">
                                     Change
                                   </p>
                                 </div>
                               </div>
 
-                              <div className="flex justify-between ">
-                                <div className="w-[205px] h-[39px]   mt-[310px]   absolute ">
+                              <div className="flex justify-between w-[650px] ">
+                                <div className="w-[210px] h-[39px]   mt-[310px]   absolute ">
                                   <Input
                                     disabled
                                     type="email"
@@ -1449,7 +1453,7 @@ export default function Home() {
                                     className="text-base font-bold text-right placeholder:text-[#71B02F] bg-[#E7F3DA]"
                                   />
                                 </div>
-                                <div className="w-[205px] h-[39px]  ml-[215px] mt-[310px]   absolute ">
+                                <div className="w-[210px] h-[39px]  ml-[220px] mt-[310px]   absolute ">
                                   <Input
                                     disabled
                                     type="email"
@@ -1457,7 +1461,7 @@ export default function Home() {
                                     className="text-base font-bold text-right placeholder:text-black bg-[#E9EEF3]"
                                   />
                                 </div>
-                                <div className="w-[205px] h-[39px]  ml-[430px] mt-[310px]   absolute ">
+                                <div className="w-[210px] h-[39px]  ml-[440px] mt-[310px]   absolute ">
                                   <Input
                                     disabled
                                     type="email"
@@ -1467,32 +1471,32 @@ export default function Home() {
                                 </div>
                               </div>
 
-                              <div className="w-[635px] h-[243px]   mt-[370px]   absolute rounded-lg">
+                              <div className="w-[650px] h-[243px]   mt-[370px]   absolute rounded-lg">
                                 <div className=" rounded-lg">
-                                  <Button className="w-[124px] h-[60px] rounded-tl-lg border bg-white text-black hover:text-white">
+                                  <Button className="w-[126px] h-[60px] rounded-tl-lg border bg-white text-black hover:text-white">
                                     1
                                   </Button>
-                                  <Button className="w-[124px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                                  <Button className="w-[126px] h-[60px] rounded-none border bg-white text-black hover:text-white">
                                     2
                                   </Button>
                                   <Button className="w-[125px] h-[60px] rounded-none border bg-white text-black hover:text-white">
                                     3
                                   </Button>
-                                  <Button className="w-[260px] h-[60px] text-sm font-[300] rounded-tr-lg border bg-white text-black hover:text-white">
+                                  <Button className="w-[273px] h-[60px] text-sm font-[300] rounded-tr-lg border bg-white text-black hover:text-white">
                                     Clear
                                   </Button>
                                 </div>
                                 <div className=" rounded-lg flex">
-                                  <Button className="w-[124px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                                  <Button className="w-[126px] h-[60px] rounded-none border bg-white text-black hover:text-white">
                                     4
                                   </Button>
-                                  <Button className="w-[124px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                                  <Button className="w-[126px] h-[60px] rounded-none border bg-white text-black hover:text-white">
                                     5
                                   </Button>
                                   <Button className="w-[125px] h-[60px] rounded-none border bg-white text-black hover:text-white">
                                     6
                                   </Button>
-                                  <Button className="w-[260px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                                  <Button className="w-[273px] h-[60px] rounded-none border bg-white text-black hover:text-white">
                                     <svg
                                       width="25"
                                       height="25"
@@ -1510,30 +1514,30 @@ export default function Home() {
                                   </Button>
                                 </div>
                                 <div className=" rounded-lg">
-                                  <Button className="w-[124px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                                  <Button className="w-[126px] h-[60px] rounded-none border bg-white text-black hover:text-white">
                                     7
                                   </Button>
-                                  <Button className="w-[124px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                                  <Button className="w-[126px] h-[60px] rounded-none border bg-white text-black hover:text-white">
                                     8
                                   </Button>
                                   <Button className="w-[125px] h-[60px] rounded-none border bg-white text-black hover:text-white">
                                     9
                                   </Button>
-                                  <Button className="w-[260px] h-[60px] text-sm rounded-none border bg-white text-black hover:text-white">
+                                  <Button className="w-[273px] h-[60px] text-sm rounded-none border bg-white text-black hover:text-white">
                                     PAY & PRINT
                                   </Button>
                                 </div>
                                 <div className=" rounded-lg">
-                                  <Button className="w-[124px] h-[60px] rounded-bl-lg border bg-white text-black hover:text-white">
+                                  <Button className="w-[126px] h-[60px] rounded-bl-lg border bg-white text-black hover:text-white">
                                     0
                                   </Button>
-                                  <Button className="w-[124px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                                  <Button className="w-[126px] h-[60px] rounded-none border bg-white text-black hover:text-white">
                                     .
                                   </Button>
                                   <Button className="w-[125px] h-[60px] rounded-none border bg-white text-black hover:text-white">
                                     00
                                   </Button>
-                                  <Button className="w-[260px] h-[60px] rounded-br-lg border text-black bg-[#F5F5F5] hover:text-white">
+                                  <Button className="w-[273px] h-[60px] rounded-br-lg border text-black bg-[#F5F5F5] hover:text-white">
                                     BACK
                                   </Button>
                                 </div>
@@ -1548,6 +1552,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-         </nav> 
+    </nav> 
   );
 }

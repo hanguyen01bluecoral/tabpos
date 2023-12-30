@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 const Product: React.FC = () => {
     return (
-         <div className="w-[145px] border-none">
+         <div className="w-[145px] border-none mr-[5px]">
             <Card className="flex flex-col justify-between">
             <CardHeader className="flex-row gap-4 items-center px-0 py-0">
                 <a href="#">
