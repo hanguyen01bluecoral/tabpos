@@ -185,7 +185,7 @@ export default function Home() {
                 </a>
               </div>
               <div className="py-2 cursor-pointer">
-                <a href="order">
+                <a href="oderPaid">
                 <Avatar className="text-center items-center w-[36px] h-[36px]">
                   <AvatarImage src="https://github.com/shadcn.png" />
                   <AvatarFallback>CN</AvatarFallback>
