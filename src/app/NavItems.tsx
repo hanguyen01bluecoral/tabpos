@@ -25,7 +25,7 @@ const NavItems: React.FC = () => {
       <CheckboxWithLabel id="nav11" label="Accessories" onChange={handleCheckChange} />
       <CheckboxWithLabel id="nav12" label="Caps" onChange={handleCheckChange} />
       <CheckboxWithLabel id="nav13" label="Color" onChange={handleCheckChange} />
-      <CheckboxWithLabel id="nav14" label="All items" onChange={handleCheckChange} />
+      <CheckboxWithLabel id="nav14" label="croptops" onChange={handleCheckChange} />
       <CheckboxWithLabel id="nav15" label="All items" onChange={handleCheckChange} />
       <CheckboxWithLabel id="nav16" label="All items" onChange={handleCheckChange} />
       <CheckboxWithLabel id="nav17" label="All items" onChange={handleCheckChange} />

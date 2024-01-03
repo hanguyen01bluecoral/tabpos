@@ -222,7 +222,7 @@ export default function OderPaid() {
               <div className="text-black text-sm font-semibold font-['Inter']">
                 350.000.000đ
               </div>
-              <div className="text-[#555] text-xs font-normal ">Uyen Tran</div>
+              <div className="text-[#555] text-xs font-normal ">Nguyen Van A</div>
             </div>
           </div>
           <div className="w-[370px] p-2.5 bg-white justify-between items-start inline-flex hover:bg-lime-50 hover:text-[#71B02F]" onClick={showTable}>

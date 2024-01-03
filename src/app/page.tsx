@@ -742,7 +742,7 @@ export default function Home() {
 
                 {/* table products */}
                 <Table>
-                  <div className="h-[100%] overflow-y-auto scrollbar-none">
+                  <div className="h-[430px] overflow-y-auto scrollbar-none">
 
                   <TableCaption></TableCaption>
                   <TableHeader>
@@ -810,7 +810,42 @@ export default function Home() {
                         </Avatar>
                       </TableCell>
                     </TableRow>
-                  
+                    <TableRow>
+                      <TableCell className="w-[129px]">
+                        <div>
+                          <h5 className="text-sm font-semibold">Coffee</h5>
+                          <p className="text-xs">Size A, Black</p>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <Quantity />
+                      </TableCell>
+                      <TableCell className="text-left">1000đ</TableCell>
+                      <TableCell className="text-right">
+                        <Avatar className="text-center items-center w-5 h-5">
+                          <AvatarImage src="https://github.com/shadcn.png" />
+                          <AvatarFallback>CN</AvatarFallback>
+                        </Avatar>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="w-[129px]">
+                        <div>
+                          <h5 className="text-sm font-semibold">Coffee</h5>
+                          <p className="text-xs">Size A, Black</p>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <Quantity />
+                      </TableCell>
+                      <TableCell className="text-left">1000đ</TableCell>
+                      <TableCell className="text-right">
+                        <Avatar className="text-center items-center w-5 h-5">
+                          <AvatarImage src="https://github.com/shadcn.png" />
+                          <AvatarFallback>CN</AvatarFallback>
+                        </Avatar>
+                      </TableCell>
+                    </TableRow>                  
                   </TableBody>
                   </div>
                 </Table>
