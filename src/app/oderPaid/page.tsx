@@ -18,6 +18,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import React, { useState } from "react";
+import Image from "next/image";
 
 
 export default function OderPaid() {
@@ -196,9 +197,9 @@ export default function OderPaid() {
           <p className="text-sm font-bold ">Date: start - end</p>
         </div>
 
-        <div className="w-[370px] h-[389px] mt-[15px] bg-zinc-100 rounded border border-zinc-100 flex-col justify-start items-start gap-px inline-flex">
+        <div className="w-[370px] h-[49.5%] mt-[15px]  bg-white rounded border border-zinc-100 flex-col justify-start items-start gap-px inline-flex">
           
-          <div className={`w-[370px] p-2.5 bg-white justify-between items-start inline-flex hover:bg-lime-50 hover:text-[#71B02F] ${ activeItem === 2 ? 'bg-lime-50 text-[#71B02F]' : ''}`} onClick={() => handleItemClick(2)}>
+          <div className={`w-[370px] p-2.5 border-b justify-between items-start inline-flex hover:bg-lime-50 hover:text-[#71B02F] ${activeItem === 2 ? 'text-[#71B02F] bg-lime-50'  : ''}`} onClick={() => handleItemClick(2)}>
             <div className="flex-col justify-start items-start gap-[5px] inline-flex">
             <b className="text-sm font-['Inter']">#32098532798</b>
               <div className="text-[#555] text-xs font-normal ">
@@ -213,7 +214,7 @@ export default function OderPaid() {
               <div className="text-[#555] text-xs font-normal ">Uyen Tran</div>
             </div>
           </div>
-          <div  className={`w-[370px] p-2.5 bg-white justify-between items-start inline-flex hover:bg-lime-50 hover:text-[#71B02F] ${ activeItem === 1 ? 'bg-lime-50 text-[#71B02F]' : ''}`} onClick={() => handleItemClick(1)}>
+          <div className={`w-[370px] p-2.5 border-b justify-between items-start inline-flex hover:bg-lime-50 hover:text-[#71B02F] ${ activeItem === 1 ? 'bg-lime-50 text-[#71B02F]' : ''}`} onClick={() => handleItemClick(1)}>
             <div className="flex-col justify-start items-start gap-[5px] inline-flex">
             <b className="text-sm font-['Inter']">#32098532798</b>
               <div className="text-[#555] text-xs font-normal">
@@ -228,7 +229,7 @@ export default function OderPaid() {
               <div className="text-[#555] text-xs font-normal ">Uyen Tran</div>
             </div>
           </div>
-          <div className={`w-[370px] p-2.5 bg-white justify-between items-start inline-flex hover:bg-lime-50 hover:text-[#71B02F] ${ activeItem === 3 ? 'bg-lime-50 text-[#71B02F]' : ''}`} onClick={() => handleItemClick(3)}>
+          <div className={`w-[370px] p-2.5 border-b justify-between items-start inline-flex hover:bg-lime-50 hover:text-[#71B02F] ${ activeItem === 3 ? 'bg-lime-50 text-[#71B02F]' : ''}`} onClick={() => handleItemClick(3)}>
             <div className="flex-col justify-start items-start gap-[5px] inline-flex">
             <b className="text-sm font-['Inter']">#32098532798</b>
               <div className="text-[#555] text-xs font-normal ">
@@ -243,9 +244,9 @@ export default function OderPaid() {
               <div className="text-[#555] text-xs font-normal ">Uyen Tran</div>
             </div>
           </div>
-          <div className="w-[370px] p-2.5 bg-white justify-between items-start inline-flex hover:bg-lime-50 hover:text-[#71B02F]">
+          <div className={`w-[370px] p-2.5 border-b justify-between items-start inline-flex hover:bg-lime-50 hover:text-[#71B02F] ${ activeItem === 4 ? 'bg-lime-50 text-[#71B02F]' : ''}`} onClick={() => handleItemClick(4)}>
             <div className="flex-col justify-start items-start gap-[5px] inline-flex">
-            <b className="text-sm font-['Inter']">#32098532798</b>
+            <b className="text-sm font-['Inter']">#32098532791</b>
               <div className="text-neutral-600 text-xs font-normal ">
                 21/11/2017, 15:30
               </div>
@@ -262,7 +263,7 @@ export default function OderPaid() {
               </div>
             </div>
           </div>
-          <div className="w-[370px] p-2.5 bg-white justify-between items-start inline-flex hover:bg-lime-50 hover:text-[#71B02F]" >
+          <div className={`w-[370px] p-2.5 border-b justify-between items-start inline-flex hover:bg-lime-50 hover:text-[#71B02F] ${ activeItem === 5 ? 'bg-lime-50 text-[#71B02F]' : ''}`} onClick={() => handleItemClick(5)} >
             <div className="flex-col justify-start items-start gap-[5px] inline-flex">
             <b className="text-sm font-['Inter']">#32098532798</b>
               <div className="text-neutral-600 text-xs font-normal ">
@@ -1257,7 +1258,7 @@ export default function OderPaid() {
                   <div className="w-[100%] justify-between items-start inline-flex">
                     <div className="flex-col justify-start items-start gap-2.5 inline-flex cursor-pointer">
                       <div className="text-black text-xl font-medium font-['Inter']">
-                        #32098532792
+                        #32098532791
                       </div>
                       <div className="flex-col justify-start items-start gap-[5px] flex">
                         <div className="text-neutral-600 text-sm font-normal ">
