@@ -742,7 +742,7 @@ export default function Home() {
 
                 {/* table products */}
                 <Table>
-                  <div className="h-[430px] overflow-y-auto scrollbar-none">
+                  <div className="h-[100%] overflow-y-auto scrollbar-none">
 
                   <TableCaption></TableCaption>
                   <TableHeader>
