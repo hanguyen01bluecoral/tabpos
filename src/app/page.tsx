@@ -104,6 +104,13 @@ import {
 } from "@/components/ui/tooltip";
 import CheckboxWithLabel from "./CheckboxWithLabel";  
 import { Value } from "@radix-ui/react-select";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 // const invoices = [
 //   {
@@ -155,9 +162,11 @@ export default function Home() {
   const handleClose = () => {
     setOpen(false);
   };
+
   function handleCheckChange(): void {
     throw new Error("Function not implemented.");
   }
+
 
   return (
     <nav className="w-[100%] h-screen flex  bg-[#F7F9FB]">
@@ -306,6 +315,22 @@ export default function Home() {
           <HeaderNav />
         </div>
         <div className=" mt-[2%]">
+        {/* <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full"
+        >
+          <CarouselContent>
+            {Array.from({ length: 55 }).map((_, index) => (
+              <CarouselItem key={index} className="md:basis-1/6 lg:basis-[115px]">
+                <div className="p-0">
+                  <CheckboxWithLabel id="nav" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel> */}
           <NavItems />
         </div>
         <div className="mt-[2%] h-[437px] overflow-y-auto scrollbar-none flex justify-between flex-wrap gap-y-[10px]">
