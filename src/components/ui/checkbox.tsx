@@ -11,11 +11,7 @@ const Checkbox = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
 >(({ className, ...props }, ref) => {
   const [isChecked, setIsChecked] = React.useState(false);
-  const [iscolor, setIsColor] = React.useState('text-black');
 
-  const handleColor = () => {
-    setIsChecked(isChecked)
-  }
 
   const handleCheckChange = () => {
     setIsChecked(!isChecked);
@@ -25,14 +21,14 @@ const Checkbox = React.forwardRef<
       ref={ref}
       className={cn(
         "peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground",
-        className,
-        { 'text-white': isChecked }
+        
+        className
       )}
       {...props}
       onChange={handleCheckChange}
     >
       <CheckboxPrimitive.Indicator
-        className={cn("flex items-center justify-center text-current",  { 'text-white': isChecked })}
+        className={cn("flex items-center justify-center text-current")}
       >
         {isChecked && <Check className="h-4 w-4" />}
       </CheckboxPrimitive.Indicator>

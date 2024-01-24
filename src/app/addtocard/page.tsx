@@ -19,7 +19,7 @@ export default function AddToCard() {
 
     return (
         <main>
-        <div className="w-[770px] h-[950px] rounded-lg bg-white border  mx-auto relative">
+        <div className="w-[770px] h-[920px] rounded-lg bg-white border mb-[20px]  mx-auto relative">
           <div className="w-[730px] h-[39px] mx-4 mt-5 border-b-[1px] absolute flex justify-between">
             <p className="pt-2 text-black font-bold text-base">
               Chọn option sản phẩm
@@ -90,22 +90,22 @@ export default function AddToCard() {
                 id="terms1"
                 className="w-[80px] h-[40px] mr-3 mt-3 relative border-gray-200"
               />
-              <Label  htmlFor="terms2" className="absolute  mt-6 ml-[109px] text-sm  cursor-pointer">Green</Label>
+              <Label htmlFor="terms2" className="absolute  mt-[22px] ml-[109px] text-sm  cursor-pointer" >Green</Label>
               <Checkbox
                 id="terms2"
                 className="w-[80px] h-[40px] mr-3 mt-3 border-gray-200"
               />
-              <Label htmlFor="terms1" className="absolute  mt-6 ml-6 text-sm cursor-pointer">Red</Label>
+              <Label htmlFor="terms1" className="absolute  mt-[22px] ml-6 text-sm cursor-pointer">Red</Label>
               <Checkbox
                 id="terms3"
                 className="w-[80px] h-[40px] mr-3 mt-3 relative border-gray-200"
               />
-              <Label  htmlFor="terms3" className="absolute  mt-6 ml-[205px] text-sm cursor-pointer">Black</Label>
+              <Label  htmlFor="terms3" className="absolute  mt-[22px] ml-[205px] text-sm cursor-pointer">Black</Label>
               <Checkbox
                 id="terms4"
                 className="w-[80px] h-[40px] mr-3 mt-3 border-gray-200"
               />
-              <Label  htmlFor="terms4" className="absolute  mt-6 ml-[295px] text-sm cursor-pointer">White</Label>
+              <Label  htmlFor="terms4" className="absolute  mt-[22px] ml-[295px] text-sm cursor-pointer">White</Label>
             </div>
           </div>
 
@@ -255,9 +255,11 @@ export default function AddToCard() {
           </div>
 
           <div className="w-full h-[25px] absolute mt-[840px] mx-4 flex">
-            <Button className="mt-2 mr-3 w-[730px] bg-slate-white border rounded-md text-black hover:text-white">
-              Add to cart
-            </Button>
+            <a href="#">
+              <Button className="mt-2 mr-3 w-[730px] bg-slate-white border rounded-md text-black hover:text-white">
+                Add to cart
+              </Button>
+            </a>
           </div>
     </div>
         </main>

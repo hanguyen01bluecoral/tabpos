@@ -315,23 +315,163 @@ export default function Home() {
           <HeaderNav />
         </div>
         <div className=" mt-[2%]">
-        {/* <Carousel
+        <Carousel
           opts={{
             align: "start",
           }}
           className="w-full"
         >
           <CarouselContent>
-            {Array.from({ length: 55 }).map((_, index) => (
-              <CarouselItem key={index} className="md:basis-1/6 lg:basis-[115px]">
-                <div className="p-0">
+            
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0l">
                   <CheckboxWithLabel id="nav" label="All items" onChange={handleCheckChange} />
                 </div>
               </CarouselItem>
-            ))}
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav1" label="Best Sellers" onChange={handleCheckChange}/>
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav2" label="Offers" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav3" label="Accessories" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav4" label="Hoodies" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav5" label="Caps" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav6" label="Tshirts" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav7" label="Swter" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav8" label="Hoodieszip" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav9" label="Color" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav10" label="Offers" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav11" label="Accessories" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav12" label="Caps" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav13" label="Color" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav14" label="croptops" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav15" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav16" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav17" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav18" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav19" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav20" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav21" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav22" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav23" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav24" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav25" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav26" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav27" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="lg:basis-[115px]">
+                <div className="p-0">
+                <CheckboxWithLabel id="nav28" label="All items" onChange={handleCheckChange} />
+                </div>
+              </CarouselItem>
+            
           </CarouselContent>
-        </Carousel> */}
-          <NavItems />
+        </Carousel>
+          {/* <NavItems /> */}
         </div>
         <div className="mt-[2%] h-[437px] overflow-y-auto scrollbar-none flex justify-between flex-wrap gap-y-[10px]">
           <Product />
@@ -835,36 +975,7 @@ export default function Home() {
                     <Checkbox id="terms"  className="w-[20px] h-[20px] rounded-full bg-gray-300 border-none"/>
                     </TableCell>
                   </TableRow>
-                  <TableRow>
-                    <TableCell className="w-[129px]">
-                      <div>
-                        <h5 className="text-sm font-semibold">Coffee</h5>
-                        <p className="text-xs">Size A, Black</p>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <Quantity />
-                    </TableCell>
-                    <TableCell className="text-left">1000đ</TableCell>
-                    <TableCell className="text-right">
-                    <Checkbox id="terms"  className="w-[20px] h-[20px] rounded-full bg-gray-300 border-none"/>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="w-[129px]">
-                      <div>
-                        <h5 className="text-sm font-semibold">Coffee</h5>
-                        <p className="text-xs">Size A, Black</p>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <Quantity />
-                    </TableCell>
-                    <TableCell className="text-left">1000đ</TableCell>
-                    <TableCell className="text-right">
-                    <Checkbox id="terms"  className="w-[20px] h-[20px] rounded-full bg-gray-300 border-none"/>
-                    </TableCell>
-                  </TableRow>
+               
                   
                 </TableBody>
               </div>
