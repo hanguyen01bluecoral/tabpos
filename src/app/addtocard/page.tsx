@@ -90,7 +90,7 @@ export default function AddToCard() {
                 id="terms1"
                 className="w-[80px] h-[40px] mr-3 mt-3 relative border-gray-200"
               />
-              <Label htmlFor="terms2" className="absolute  mt-[22px] ml-[109px] text-sm  cursor-pointer" >Green</Label>
+              <Label htmlFor="terms2" className="absolute  mt-[22px] ml-[109px] text-sm cursor-pointer" >Green</Label>
               <Checkbox
                 id="terms2"
                 className="w-[80px] h-[40px] mr-3 mt-3 border-gray-200"

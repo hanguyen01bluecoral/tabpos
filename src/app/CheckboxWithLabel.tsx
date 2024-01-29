@@ -12,7 +12,7 @@ interface CheckboxWithLabelProps {
 
 const CheckboxWithLabel : React.FC<CheckboxWithLabelProps> = ({ id, label, onChange }) => {
   return (
-    <div className="flex w-[110px] h-[36px] bg-white rounded hover:bg-[#71B02F] hover:text-white ml-3 first:ml-0">
+    <div className="flex w-[100px] h-[36px] bg-white rounded hover:bg-[#71B02F] hover:text-white ml-3 first:ml-0">
       <div className="flex items-center space-x-1">
         <Checkbox
           id={id}
@@ -31,10 +31,3 @@ const CheckboxWithLabel : React.FC<CheckboxWithLabelProps> = ({ id, label, onCha
 };
 export default CheckboxWithLabel ;
 
-/**
- * nêus như mà để là overflow-x-hiden thì sẽ hình thành thanh cuộn
- * nếu như để scrollbar-none tthanh cuộn sẽ biến mất và thay vào đó vẫn sẽ cuộn được bằng tay
- * => không cuộn được bằng cách trỏ chuôt => xử lí JS
- * calc(100% + 400px) => full khoảng trông còn lại của column
- * 
- */
