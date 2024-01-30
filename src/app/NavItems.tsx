@@ -10,7 +10,7 @@ const NavItems: React.FC = () => {
     console.log('check');
   };
   return (
-    <div className="w-[100%] h-11 mt-5 flex overflow-x-auto scrollbar-none">      
+    <div className="w-[100%] h-11 flex overflow-x-auto scrollbar-none">      
       <CheckboxWithLabel id="nav" label="All items" onChange={handleCheckChange} />
       <CheckboxWithLabel id="nav1" label="Best Sellers" onChange={handleCheckChange}/>
       <CheckboxWithLabel id="nav2" label="Offers" onChange={handleCheckChange} />

@@ -6,9 +6,7 @@ interface CheckboxWithLabelProps {
   label: string;
   onChange: () => void;
 }
-// phai tao moi gia props la 1 gia tri de xay dung ham
-//void la ham khog tra ve gia tri chi don gian la goi hanh dong tac dong len checkbox
-//interface la 1 thuoc tinhs cua type script dung de tao 1 constructor 
+
 
 const CheckboxWithLabel : React.FC<CheckboxWithLabelProps> = ({ id, label, onChange }) => {
   return (

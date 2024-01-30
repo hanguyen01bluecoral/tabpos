@@ -100,7 +100,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("flex",inter.className)}>
         {/* nav */}
-        <div className="pt-[20px] pl-3 pr-4 h-screen flex flex-1 flex-col flex-shrink-0 flex-grow-0 justify-between bg-white">
+        <div className=" pl-3 pr-4 h-screen flex flex-1 flex-col flex-shrink-0 flex-grow-0 justify-between bg-white">
           <div className=" pl-2 ">
             <div className="py-2 rounded-none cursor-pointer">
               <Avatar className="text-center items-center w-[45px] h-[45px] rounded-none">

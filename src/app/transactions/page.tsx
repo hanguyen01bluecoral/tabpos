@@ -54,7 +54,7 @@ export default function Transactions() {
  
 
       {/* Khoi tao mid */}
-      <div className=" pt-[13px] h-screen ml-[1%] flex-grow mr-[1%]">
+      <div className=" pt-[13px] h-screen ml-[20px] flex-grow mr-[20px]">
             <DemoPage />
       </div>
     

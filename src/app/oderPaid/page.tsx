@@ -36,7 +36,7 @@ export default function OderPaid() {
   return (
     <nav className="w-[100%] h-screen flex  bg-[#F7F9FB]">
       {/* Khoi tao mid */}
-      <div className=" pt-[30px] h-screen ml-[1%] flex-grow ">
+      <div className=" pt-[20px] h-screen ml-[1%] flex-grow ">
         <div className="">
           <p className="text-xl font-medium ">Orders</p>
         </div>
@@ -145,7 +145,7 @@ export default function OderPaid() {
         </div>
       </div>
        {activeItem === 1 &&(
-        <div  className="w-[100%] pt-[70px] h-screen ml-[1%] flex-grow">
+        <div  className="w-[100%] pt-[65px] h-screen ml-[1%] flex-grow">
               <div className="w-[100%] h-[920px] bg-white flex-grow border rounded-sm flex-1">
                 {/* top */}
                 <div className="w-[100%] h-[209px] p-5 bg-slate-200 flex-col justify-start items-start gap-[15px] inline-flex">
@@ -628,7 +628,7 @@ export default function OderPaid() {
        </div>)
         }
         {activeItem === 2 &&(
-        <div  className="w-[100%] pt-[70px] h-screen ml-[1%] flex-grow">
+        <div  className="w-[100%] pt-[65px] h-screen ml-[1%] flex-grow">
               <div className="w-[100%] h-[920px] bg-white flex-grow border rounded-sm flex-1">
                 {/* top */}
                 <div className="w-[100%] h-[209px] p-5 bg-slate-200 flex-col justify-start items-start gap-[15px] inline-flex">
@@ -1111,7 +1111,7 @@ export default function OderPaid() {
        </div>)
         }
         {activeItem === 3 &&(
-        <div  className="w-[100%] pt-[70px] h-screen ml-[1%] flex-grow">
+        <div  className="w-[100%] pt-[65px] h-screen ml-[1%] flex-grow">
               <div className="w-[100%] h-[920px] bg-white flex-grow border rounded-sm flex-1">
                 {/* top */}
                 <div className="w-[100%] h-[209px] p-5 bg-slate-200 flex-col justify-start items-start gap-[15px] inline-flex">

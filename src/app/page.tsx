@@ -78,12 +78,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ReportComponent from "./Report";
 import React, { createContext } from "react";
 import Product from "./Products";
-import Avatars from "./Avatar";
 import HeaderNav from "./HeaderNav";
 import NavItems from "./NavItems";
-import Customer from "./Customer";
-import AddToCard from "./AddToCard";
-import CustomerSearch from "./CustomerSearch";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -96,12 +92,6 @@ import {
 import { CopyMinusIcon, SaveIcon } from "lucide-react";
 import Quantity from "./Quantity";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import CheckboxWithLabel from "./CheckboxWithLabel";  
 import { Value } from "@radix-ui/react-select";
 import {
@@ -128,17 +118,17 @@ export default function Home() {
   
     <nav className="w-[100%] h-screen flex bg-[#F7F9FB]">
       {/* khoi itemproduct */}
-      <div className="w-[60%] pt-[30px] h-screen ml-[15px] flex-grow ">
+      <div className="w-[60%] pt-[10px] h-screen ml-[15px] flex-grow ">
         <div className="">
           <HeaderNav />
         </div>
 
-        <div className=" mt-[2%]">
+        <div className=" mt-[20px]">
         <Carousel
           opts={{
             align: "start",
           }}
-          className="overflow-x-hidden"
+          className="w-full"
         >
           <CarouselContent>
               <CarouselItem className="lg:basis-[115px]">
@@ -289,9 +279,10 @@ export default function Home() {
             
           </CarouselContent>
         </Carousel>
+
         </div>
 
-        <div className="mt-[2%] h-[457px] overflow-y-auto scrollbar-none flex justify-between flex-wrap gap-y-[10px]">
+        <div className="mt-[20px] h-[457px] overflow-y-auto scrollbar-none flex justify-between flex-wrap gap-y-[10px]">
           <Product />
           <Product />
           <Product />
@@ -332,10 +323,10 @@ export default function Home() {
       </div>
 
       {/* khoi customer */}
-      <div className="w-[400px] pt-[30px]  ml-[1%] h-screen flex  flex-col">
+      <div className="w-[400px] pt-[10px]  ml-[10px] h-screen flex  flex-col">
         <div className=" flex-grow h-full bg-white rounded-lg mb-[35px]">
-          <div className="pt-4  rounded-xl">
-            <p className="ml-3 text-sm font-medium">Customer</p>
+          <div className="pt-3  rounded-xl">
+            <p className="ml-3 mb-1 text-sm font-medium">Customer</p>
             <div className="mb-2 rounded-full w-[97%] h-[100%] bg-[#F7F9FB] flex  justify-between pt-3 pl-2 mx-auto ">
               {/* search customer */}
               <DropdownMenu open={open} onOpenChange={() => setOpen(!open)}>
@@ -529,7 +520,7 @@ export default function Home() {
                         <p className="pt-0 text-black font-bold text-base">
                           Marion Smith
                         </p>
-                        <AlertDialogCancel className="border-none p-1">
+                        <AlertDialogCancel className="border-none hover:bg-transparent p-1">
                           <svg
                             className="mt-0 mr-3 mb-3 cursor-pointer"
                             width="15"
@@ -734,7 +725,7 @@ export default function Home() {
             </div>
 
             {/* table products */}
-            <Table>
+            <Table className="mt-2">
               <div className="h-[100%] overflow-y-auto scrollbar-none">
                 <TableCaption></TableCaption>
                 <TableHeader>
