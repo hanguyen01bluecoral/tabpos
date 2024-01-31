@@ -81,6 +81,10 @@
     font-family: 'Inter';
   }
 }
+
+.nav {
+  @apply box-border;
+}
 /* main, nav {
   @apply max-w-6xl mx-auto my-12;
 } */

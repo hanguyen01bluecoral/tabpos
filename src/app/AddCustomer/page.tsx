@@ -44,6 +44,9 @@ import {
 } from "@/components/ui/table";
 import React from "react";
 import DemoAddCustomes from "../test/page";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function Transactions() {
   return (
@@ -77,20 +80,160 @@ export default function Transactions() {
                     </div>
                     </div>
                 </div>
-                <div className="w-[130px] h-[45px] bg-white ml-6 px-[10px] py-[12px]">
-                    <div className="flex items-center space-x-2">
-                    <Checkbox
-                        id="terms"
-                        className="rounded-full border-none w-5 h-5 bg-[#D9D9D9]"
-                    />
-                    <label
-                        htmlFor="terms"
-                        className="text-black font-normal leading-5 text-[12px]"
-                    >
-                        Add Customer
-                    </label>
-                    </div>
-                </div>
+                
+                <Dialog>
+                  <DialogTrigger asChild>
+                      <div className="w-[130px] h-[45px] bg-white ml-6 px-[10px] py-[12px] rounded-sm">
+                          <div className="flex items-center space-x-2">
+                          <Checkbox
+                              id="terms"
+                              className="rounded-full border-none w-5 h-5 bg-[#D9D9D9]"
+                          />
+                          <label
+                              htmlFor="terms"
+                              className="text-black font-normal leading-5 text-[12px]"
+                          >
+                              Add Customer
+                          </label>
+                          </div>
+                      </div>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-[770px]">
+                    <DialogHeader>
+                      <DialogTitle className="pb-4 items-center">Add new customer</DialogTitle>
+                      <DialogDescription>
+                      </DialogDescription>
+                    </DialogHeader>
+                            <div className='flex w-full justify-between -mt-2'>
+                                <div className='w-[353px]'>
+                                    <p className='text-sm font-bold leading-normal'>First Name</p>
+                                    <Input className='mt-3 border-none bg-[#F7F9FB]' type='text' name='firtname'/>
+                                </div>
+                                <div className='w-[353px]'>
+                                    <p className='text-sm font-bold leading-normal'>Last Name</p>
+                                    <Input className='mt-3 border-none bg-[#F7F9FB]'  type='text' name='lastname' />
+                                </div>
+                            </div>
+                            <div className='flex w-full justify-between mt-0'>
+                                <div className='w-[353px]'>
+                                    <p className='text-sm font-bold leading-normal'>Email</p>
+                                    <Input className='mt-2 border-none bg-[#F7F9FB]' type='text' />
+                                </div>
+                                <div className=' w-[353px]'>
+                                    <p className='text-sm font-bold leading-normal'>Phone</p>
+                                    <Input className='mt-2 border-none bg-[#F7F9FB]' type='text' name='phone' />
+                                </div>
+                            </div>
+                            <div className='flex w-full justify-between mt-0'>
+                                <div className=' w-[100%]'>
+                                    <p className='text-sm font-bold leading-normal'>Adress1</p> 
+                                    <Input className='mt-2 border-none bg-[#F7F9FB]' type='text' name='address' />
+                                </div>
+                            </div>
+                            <div className='flex w-full justify-between mt-0'>
+                                <div className=' w-[100%]'>
+                                    <p className='text-sm font-bold leading-normal'>Adress2</p>
+                                    <Input className='mt-2 border-none bg-[#F7F9FB]'/>
+                                </div>
+                            </div>
+                            <div className='flex w-full justify-between mt-0 '>
+                                <div className=' w-[353px] '>
+                                    <p className='text-sm font-bold leading-normal'>Coutry</p>
+                                    <Select>
+                                        <SelectTrigger className="w-[353px] h-[44px] outline-none border-none bg-[#F7F9FB] mt-2">
+                                            <SelectValue placeholder="a" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectGroup>
+                                            <SelectLabel></SelectLabel>
+                                            <SelectItem value="apple">Apple</SelectItem>
+                                            <SelectItem value="banana">Banana</SelectItem>
+                                            <SelectItem value="blueberry">Blueberry</SelectItem>
+                                            <SelectItem value="grapes">Grapes</SelectItem>
+                                            <SelectItem value="pineapple">Pineapple</SelectItem>
+                                            </SelectGroup>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                                <div className=' w-[353px]'>
+                                    <p className='text-sm font-bold leading-normal'>Sate</p>
+                                    <Select>
+                                        <SelectTrigger className="w-[353px] h-[44px] outline-none border-none bg-[#F7F9FB] mt-2">
+                                            <SelectValue />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectGroup>
+                                            <SelectLabel></SelectLabel>
+                                            <SelectItem value="apple">Tiểu bang 1</SelectItem>
+                                            <SelectItem value="banana">Tiển bang 2</SelectItem>
+                                            <SelectItem value="blueberry">Tiểu bang 3</SelectItem>
+                                            <SelectItem value="grapes">Tiểu bang 4</SelectItem>
+                                            <SelectItem value="pineapple">Tiểu bang 5</SelectItem>
+                                            </SelectGroup>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                            </div>
+                            <div className='flex w-full justify-between mt-0'>
+                                <div className=' w-[353px]'>
+                                    <p className='text-sm font-bold leading-normal'>City</p>
+                                    <Select >
+                                        <SelectTrigger className="w-[353px] h-[44px] outline-none border-none bg-[#F7F9FB] mt-2">
+                                            <SelectValue/>
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectGroup>
+                                            <SelectLabel></SelectLabel>
+                                            <SelectItem value="apple">Hà Nội</SelectItem>
+                                            <SelectItem value="banana">Đà Nẵng</SelectItem>
+                                            <SelectItem value="blueberry">Hồ Chí Minh</SelectItem>
+                                            <SelectItem value="grapes">Cần Thơ</SelectItem>
+                                            <SelectItem value="pineapple">Hải Phòng</SelectItem>
+                                            </SelectGroup>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                                <div className=' w-[353px]'>
+                                    <p className='text-sm font-bold leading-normal'>Zip Code</p>
+                                    <Select>
+                                        <SelectTrigger className="w-[353px] h-[44px] outline-none border-none bg-[#F7F9FB] mt-2">
+                                            <SelectValue  />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectGroup>
+                                            <SelectLabel></SelectLabel>
+                                            <SelectItem value="apple">Apple</SelectItem>
+                                            <SelectItem value="banana">Banana</SelectItem>
+                                            <SelectItem value="blueberry">Blueberry</SelectItem>
+                                            <SelectItem value="grapes">Grapes</SelectItem>
+                                            <SelectItem value="pineapple">Pineapple</SelectItem>
+                                            </SelectGroup>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                            </div>
+                            <div className='flex w-full justify-between mt-0'>
+                                <div className=' w-[100%]'>
+                                    <div className="flex items-center space-x-2">
+                                        <Checkbox id="terms" className='rounded-full'/>
+                                        <Label
+                                            htmlFor="terms"
+                                            className="text-black font-normal leading-5 text-[14px]"
+                                        >
+                                            Use same info for shipping
+                                        </Label>
+                                    </div>
+                                </div>
+                            </div>                     
+                    <DialogFooter>
+                    <div className='flex w-full justify-between mt-5'>
+                                <div className=' w-[100%]'>
+                                    <Button className='w-full rounded-lg'> SAVE</Button>
+                                </div>
+                            </div>
+                    </DialogFooter>
+                  </DialogContent>
+                </Dialog>
             </div>
             <div className="mt-[15px]">
                 <DemoAddCustomes />

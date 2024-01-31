@@ -1,6 +1,10 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Command, CommandInput } from "@/components/ui/command";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import React from "react";
 
@@ -32,17 +36,37 @@ const HeaderNav: React.FC = () => {
         </div>
         {/* phan phai */}
         <div className="flex justify-between ml-3 w-[100%]">
-          <div className="flex pt-[1px] pl-2 w-[143px] h-[45px] bg-white rounded-sm">
-            <div className="flex items-center space-x-2">
-              <Checkbox id="settable" className="w-[20px] h-[20px] rounded-full border-none bg-slate-200"/>
-              <label
-                htmlFor="settable"
-                className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Set Table
-              </label>
-            </div>
-          </div>
+
+
+          <Dialog>
+            <DialogTrigger asChild>
+              <div className="flex pt-[1px] pl-2 w-[143px] h-[45px] bg-white rounded-sm">
+                <div className="flex items-center space-x-2">
+                  <Checkbox id="settable" className="w-[20px] h-[20px] rounded-full border-none bg-slate-200"/>
+                  <label
+                    htmlFor="settable"
+                    className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    Set Table
+                  </label>
+                </div>
+              </div>
+            </DialogTrigger>
+            <DialogContent className="w-[1160px] h-[965px] scrollbar-thin  left-[50%] top-[75%] ">
+              <DialogHeader>
+                <DialogTitle className="pb-3">Set table</DialogTitle>
+                <DialogDescription>
+                </DialogDescription>
+              </DialogHeader>
+                  <div className="h-[950px]  overflow-y-auto">
+
+                  </div>
+              <DialogFooter>
+                <Button type="submit">Save changes</Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+
           <div className="">
             <Select>
               <SelectTrigger className="w-[140px] h-[45px] outline-none border-none bg-white">

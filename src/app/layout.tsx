@@ -3,83 +3,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
-import ReportComponent from "./Report";
-import AddToCard from "./AddToCard";
-import { Routes, Route } from "react-router-dom";
-import Link from "next/link";
-import Avatars from "./Avatar";
-import HeaderNav from "./HeaderNav";
-import NavItems from "./NavItems";
-import Product from "./Products";
-import Customer from "./Customer";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import React, { useState } from "react";
-import Quantity from "./Quantity";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Textarea } from "@/components/ui/textarea";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { SaveIcon } from "lucide-react";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import React, { useState } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
@@ -98,7 +24,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={cn("flex",inter.className)}>
+      <body className={cn("flex box-border",inter.className)}>
         {/* nav */}
         <div className=" pl-3 pr-4 h-screen flex flex-1 flex-col flex-shrink-0 flex-grow-0 justify-between bg-white">
           <div className=" pl-2 ">
@@ -242,7 +168,7 @@ export default function RootLayout({
             </div>
           </div>
         </div>
-
+        
         <div className="w-full">
         {children}
         </div>
