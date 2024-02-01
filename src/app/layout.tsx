@@ -28,61 +28,33 @@ export default function RootLayout({
         {/* nav */}
         <div className=" pl-3 pr-4 h-screen flex flex-1 flex-col flex-shrink-0 flex-grow-0 justify-between bg-white">
           <div className=" pl-2 ">
-            <div className="py-2 rounded-none cursor-pointer">
-              <Avatar className="text-center items-center w-[45px] h-[45px] rounded-none">
-                <AvatarImage src="" />
-                <AvatarFallback>
-                  <svg
-                    width="45"
-                    height="45"
-                    viewBox="0 0 45 45"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="45" height="45" rx="5" fill="#222222" />
-                  </svg>
-                </AvatarFallback>
-              </Avatar>
+            <div className="py-2 ml-[-2px] rounded-none cursor-pointer">
+              <div className="w-[45px] h-[45px] bg-black rounded-sm"></div>
             </div>
             <div className="py-2 cursor-pointer">
               <a href="/AddCustomer">
-                <Avatar className="text-center items-center w-[36px] h-[36px]">
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
+                <div className="w-[37px] h-[37px] bg-[#CCC] rounded-full"></div>
               </a>
             </div>
             <div className="py-2 cursor-pointer">
               <a href="/transactions">
-                <Avatar className="text-center items-center w-[36px] h-[36px]">
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-              </a>
+              <div className="w-[37px] h-[37px] bg-[#CCC] rounded-full"></div>
+                </a>
             </div>
             <div className="py-2 cursor-pointer">
               <a href="orderNopaid">
-                <Avatar className="text-center items-center w-[36px] h-[36px]">
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
+                <div className="w-[37px] h-[37px] bg-[#CCC] rounded-full"></div>
               </a>
             </div>
             <div className="py-2 cursor-pointer">
               <a href="oderPaid">
-                <Avatar className="text-center items-center w-[36px] h-[36px]">
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
+                <div className="w-[37px] h-[37px] bg-[#CCC] rounded-full"></div>
               </a>
             </div>
           </div>
           <div className="pl-2 mt-auto pt-[100%]">
             <div className="py-3 cursor-pointer">
-              <Avatar className="text-center items-center  w-[36px] h-[36px]">
-                <AvatarImage src="" />
-                <AvatarFallback className="bg-gray-300"></AvatarFallback>
-              </Avatar>
+              <div className="w-[37px] h-[37px] bg-[#CCC] rounded-full"></div>
             </div>
             <div className="py-3 cursor-pointer">
               <Avatar className="text-center items-center  w-[36px] h-[36px]">

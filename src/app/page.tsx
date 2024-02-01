@@ -49,6 +49,7 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -80,6 +81,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Label } from "@/components/ui/label";
 
 
 export default function Home() {
@@ -331,7 +333,7 @@ export default function Home() {
               </DropdownMenu>
 
               {/* add customer */}
-              <AlertDialog>
+              {/* <AlertDialog>
                 <AlertDialogTrigger asChild>
                   <button className="inline-flex items-center justify-center ml-32 mr-[10px] mb-1  whitespace-nowrap mt-[-5px] text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-green-500 hover:text-white h-8 w-8 shrink-0 rounded-full">
                     <svg
@@ -378,7 +380,7 @@ export default function Home() {
                         </AlertDialogCancel>
                       </div>
                     </AlertDialogTitle>
-                    {/* them customer */}
+
                     <AlertDialogDescription className="w-[650px] h-[540px] relative">
                       <div className="w-[670px] h-[405px] bg-white mt-[-10px]  ml-[0px] rounded-lg absolute">
                         <div className="flex justify-between ">
@@ -560,7 +562,165 @@ export default function Home() {
                     </AlertDialogDescription>
                   </AlertDialogHeader>
                 </AlertDialogContent>
-              </AlertDialog>
+              </AlertDialog> */}
+
+                <Dialog>
+                  <DialogTrigger asChild>
+                      <button className="inline-flex items-center justify-center ml-32 mr-[10px] mb-1  whitespace-nowrap mt-[-5px] text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-green-500 hover:text-white h-8 w-8 shrink-0 rounded-full">
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 15 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-4 w-4"
+                        >
+                          <path
+                            d="M8 2.75C8 2.47386 7.77614 2.25 7.5 2.25C7.22386 2.25 7 2.47386 7 2.75V7H2.75C2.47386 7 2.25 7.22386 2.25 7.5C2.25 7.77614 2.47386 8 2.75 8H7V12.25C7 12.5261 7.22386 12.75 7.5 12.75C7.77614 12.75 8 12.5261 8 12.25V8H12.25C12.5261 8 12.75 7.77614 12.75 7.5C12.75 7.22386 12.5261 7 12.25 7H8V2.75Z"
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span className="sr-only"></span>
+                      </button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-[770px]">
+                    <DialogHeader>
+                      <DialogTitle className="pb-4 items-center">Add new customer</DialogTitle>
+                      <DialogDescription>
+                      </DialogDescription>
+                    </DialogHeader>
+                            <div className='flex w-full justify-between -mt-2'>
+                                <div className='w-[353px]'>
+                                    <p className='text-sm font-bold leading-normal'>First Name</p>
+                                    <Input className='mt-3 border-none bg-[#F7F9FB]' type='text' name='firtname' placeholder="Enter"/>
+                                </div>
+                                <div className='w-[353px]'>
+                                    <p className='text-sm font-bold leading-normal'>Last Name</p>
+                                    <Input className='mt-3 border-none bg-[#F7F9FB]'  type='text' name='lastname'  placeholder="Enter"/>
+                                </div>
+                            </div>
+                            <div className='flex w-full justify-between mt-0'>
+                                <div className='w-[353px]'>
+                                    <p className='text-sm font-bold leading-normal'>Email</p>
+                                    <Input className='mt-2 border-none bg-[#F7F9FB]' type='text'  placeholder="Enter"/>
+                                </div>
+                                <div className=' w-[353px]'>
+                                    <p className='text-sm font-bold leading-normal'>Phone</p>
+                                    <Input className='mt-2 border-none bg-[#F7F9FB]' type='text' name='phone'  placeholder="Enter"/>
+                                </div>
+                            </div>
+                            <div className='flex w-full justify-between mt-0'>
+                                <div className=' w-[100%]'>
+                                    <p className='text-sm font-bold leading-normal'>Adress1</p> 
+                                    <Input className='mt-2 border-none bg-[#F7F9FB]' type='text' name='address'  placeholder="Enter"/>
+                                </div>
+                            </div>
+                            <div className='flex w-full justify-between mt-0'>
+                                <div className=' w-[100%]'>
+                                    <p className='text-sm font-bold leading-normal'>Adress2</p>
+                                    <Input className='mt-2 border-none bg-[#F7F9FB]'  placeholder="Enter"/>
+                                </div>
+                            </div>
+                            <div className='flex w-full justify-between mt-0 '>
+                                <div className=' w-[353px] '>
+                                    <p className='text-sm font-bold leading-normal'>Country</p>
+                                    <Select>
+                                        <SelectTrigger className="w-[353px] h-[44px] outline-none border-none bg-[#F7F9FB] mt-2">
+                                            <SelectValue placeholder="choose" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectGroup>
+                                            <SelectLabel></SelectLabel>
+                                            <SelectItem value="apple">Apple</SelectItem>
+                                            <SelectItem value="banana">Banana</SelectItem>
+                                            <SelectItem value="blueberry">Blueberry</SelectItem>
+                                            <SelectItem value="grapes">Grapes</SelectItem>
+                                            <SelectItem value="pineapple">Pineapple</SelectItem>
+                                            </SelectGroup>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                                <div className=' w-[353px]'>
+                                    <p className='text-sm font-bold leading-normal'>Sate</p>
+                                    <Select>
+                                        <SelectTrigger className="w-[353px] h-[44px] outline-none border-none bg-[#F7F9FB] mt-2">
+                                            <SelectValue placeholder="choose"/>
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectGroup>
+                                            <SelectLabel></SelectLabel>
+                                            <SelectItem value="apple">Tiểu bang 1</SelectItem>
+                                            <SelectItem value="banana">Tiển bang 2</SelectItem>
+                                            <SelectItem value="blueberry">Tiểu bang 3</SelectItem>
+                                            <SelectItem value="grapes">Tiểu bang 4</SelectItem>
+                                            <SelectItem value="pineapple">Tiểu bang 5</SelectItem>
+                                            </SelectGroup>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                            </div>
+                            <div className='flex w-full justify-between mt-0'>
+                                <div className=' w-[353px]'>
+                                    <p className='text-sm font-bold leading-normal'>City</p>
+                                    <Select >
+                                        <SelectTrigger className="w-[353px] h-[44px] outline-none border-none bg-[#F7F9FB] mt-2">
+                                            <SelectValue placeholder="choose"/>
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectGroup>
+                                            <SelectLabel></SelectLabel>
+                                            <SelectItem value="apple">Hà Nội</SelectItem>
+                                            <SelectItem value="banana">Đà Nẵng</SelectItem>
+                                            <SelectItem value="blueberry">Hồ Chí Minh</SelectItem>
+                                            <SelectItem value="grapes">Cần Thơ</SelectItem>
+                                            <SelectItem value="pineapple">Hải Phòng</SelectItem>
+                                            </SelectGroup>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                                <div className=' w-[353px]'>
+                                    <p className='text-sm font-bold leading-normal'>Zip Code</p>
+                                    <Select>
+                                        <SelectTrigger className="w-[353px] h-[44px] outline-none border-none bg-[#F7F9FB] mt-2">
+                                            <SelectValue  placeholder="choose"/>
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectGroup>
+                                            <SelectLabel></SelectLabel>
+                                            <SelectItem value="apple">Apple</SelectItem>
+                                            <SelectItem value="banana">Banana</SelectItem>
+                                            <SelectItem value="blueberry">Blueberry</SelectItem>
+                                            <SelectItem value="grapes">Grapes</SelectItem>
+                                            <SelectItem value="pineapple">Pineapple</SelectItem>
+                                            </SelectGroup>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                            </div>
+                            <div className='flex w-full justify-between mt-0'>
+                                <div className=' w-[100%]'>
+                                    <div className="flex items-center space-x-2">
+                                        <Checkbox id="add" className='rounded-full'/>
+                                        <Label
+                                            htmlFor="add"
+                                            className="text-black font-normal leading-5 text-[14px]"
+                                        >
+                                            Use same info for shipping
+                                        </Label>
+                                    </div>
+                                </div>
+                            </div>                     
+                    <DialogFooter>
+                    <div className='flex w-full justify-between mt-1'>
+                                <div className=' w-[100%]'>
+                                    <Button className='w-full rounded-lg'> SAVE</Button>
+                                </div>
+                            </div>
+                    </DialogFooter>
+                  </DialogContent>
+                </Dialog>
             </div>
 
             {/* table products */}
@@ -747,8 +907,8 @@ export default function Home() {
                           </AlertDialogCancel>
                         </div>
                       </AlertDialogTitle>
-                      <AlertDialogDescription className="w-[700px] h-[440px] relative">
-                        <div className="w-[670px] h-[405px] bg-white  ml-[7px] rounded-lg absolute">
+                      <AlertDialogDescription className="w-[700px] h-[370px] relative">
+                        <div className="w-[670px] h-[365px] bg-white  ml-[7px] rounded-lg absolute">
                           <div className="flex justify-between ">
                             <div className="w-[355px] h-[39px]  mx-4 mt-[5px]  absolute ">
                               <p className="pt-2 text-black font-bold text-sm">
@@ -764,9 +924,9 @@ export default function Home() {
                           </div>
 
                           <div className="flex justify-between ">
-                            <div className="w-[355px] h-[39px]  mx-4 mt-[50px]  absolute ">
+                            <div className="w-[375px] h-[39px]  mx-4 mt-[50px]  absolute ">
                               <Select>
-                                <SelectTrigger className="w-[355px]">
+                                <SelectTrigger className="w-[375px] border-none bg-[#F5F5F5]">
                                   <SelectValue placeholder="Flat rate" />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -795,12 +955,12 @@ export default function Home() {
                               </Select>
                             </div>
 
-                            <div className="w-[230px] h-[39px]  ml-[420px] mt-[50px]  absolute ">
-                              <Input type="enter" placeholder="Enter" />
+                            <div className="w-[250px] h-[39px]  ml-[400px] mt-[50px] absolute ">
+                              <Input type="enter" placeholder="Enter" className="border-none bg-[#F5F5F5] "/>
                             </div>
                           </div>
 
-                          <div className="flex justify-between ">
+                          {/* <div className="flex justify-between ">
                             <div className="w-[355px] h-[39px]  mx-4 mt-[80px]  absolute "></div>
 
                             <div className="w-[230px] h-[39px]  ml-[420px] mt-[95px]  absolute ">
@@ -808,9 +968,9 @@ export default function Home() {
                                 Amount to pay
                               </p>
                             </div>
-                          </div>
+                          </div> */}
 
-                          <div className="flex justify-between ">
+                          {/* <div className="flex justify-between ">
                             <div className="w-[355px] h-[39px]  mx-4 mt-[125px]  absolute "></div>
                             <div className="w-[230px] h-[39px]  ml-[420px] mt-[135px]  absolute ">
                               <Input
@@ -819,9 +979,9 @@ export default function Home() {
                                 className="placeholder:font-bold placeholder:text-right placeholder:text-[#71B02F] bg-[#E7F3DA] "
                               />
                             </div>
-                          </div>
+                          </div> */}
 
-                          <div className="w-[635px] h-[245px]  mx-4 mt-[195px]   absolute rounded-lg">
+                          <div className="w-[635px] h-[245px]  mx-4 mt-[110px]   absolute rounded-lg">
                             <div className=" rounded-lg">
                               <Button className="w-[124px] h-[60px] rounded-tl-lg border bg-white text-black hover:text-white">
                                 1
@@ -926,7 +1086,7 @@ export default function Home() {
                     <AlertDialogContent>
                       <AlertDialogHeader>
                         <AlertDialogTitle>
-                          <div className="flex justify-between">
+                          <div className="flex justify-between items-center">
                             Apply coupon
                             <AlertDialogCancel className="border-none p-0 hover:bg-transparent">
                               <svg
@@ -948,18 +1108,18 @@ export default function Home() {
                           </div>
                         </AlertDialogTitle>
                         <AlertDialogDescription>
-                          <div className="w-[470px] h-[180px] bg-white rounded-lg mx-auto">
-                            <div className="w-[440px] h-[41px]   mt-[10px]  absolute flex justify-between">
+                          <div className="w-[470px] h-[150px] bg-white rounded-lg mx-auto">
+                            <div className="w-[440px] h-[41px]   mt-[0px]  absolute flex justify-between">
                               <p className="pt-2 text-black font-bold text-sm">
                                 Enter coupon code
                               </p>
                             </div>
 
-                            <div className="w-[470px] h-[41px]  mt-[60px]  absolute flex justify-between">
-                              <Input type="enter" placeholder="Enter" />
+                            <div className="w-[470px] h-[41px]  mt-[40px]  absolute flex justify-between">
+                              <Input type="enter" placeholder="Enter" className="border-none bg-[#F5F5F5] "/>
                             </div>
 
-                            <div className="w-[470px] h-[41px]  mt-[120px]  absolute flex justify-between">
+                            <div className="w-[470px] h-[41px]  mt-[100px]  absolute flex justify-between">
                               <Button className="w-[470px] rounded-md">
                                 Add
                               </Button>
@@ -1037,13 +1197,13 @@ export default function Home() {
                           </div>
                         </AlertDialogTitle>
                         <AlertDialogDescription>
-                          <div className="w-[470px] h-[160px] bg-white rounded-lg mx-auto">
-                            <div className="w-[470px] h-[41px]  mt-[10px]  absolute flex justify-between">
-                              <Textarea placeholder="Enter" />
+                          <div className="w-[670px] h-[150px] bg-white rounded-lg mx-auto">
+                            <div className="w-[670px] h-[41px]  mt-[10px]  absolute flex justify-between">
+                              <Textarea placeholder="Enter" className="border-none bg-[#F5F5F5] "/>
                             </div>
 
-                            <div className="w-[470px] h-[41px]  mt-[105px]  absolute flex justify-between">
-                              <Button className="w-[470px] rounded-md">
+                            <div className="w-[670px] h-[41px]  mt-[105px]  absolute flex justify-between">
+                              <Button className="w-[670px] rounded-md">
                                 Add
                               </Button>
                             </div>
@@ -1092,7 +1252,7 @@ export default function Home() {
                       </div>
                     </div>
                   </DialogTrigger>
-                  <DialogContent>
+                  <DialogContent className="w-[700px]">
                     <DialogHeader>
                       <DialogTitle className="pb-4 focus:outline-none">Payment</DialogTitle>
                       <DialogDescription>
@@ -1144,7 +1304,7 @@ export default function Home() {
                               <Input
                                 type="email"
                                 placeholder="700.000"
-                                className="bg-[#F7F9FB]"
+                                className="bg-[#F7F9FB] border-none"
                               />
                             </div>
                           </div>
@@ -1162,22 +1322,22 @@ export default function Home() {
                               <Input
                                 type="email"
                                 placeholder="700.000đ"
-                                className="bg-[#F7F9FB] w-[150px] mr-3 placeholder:text-center"
+                                className=" w-[150px] mr-3 placeholder:text-center"
                               />
                               <Input
                                 type="email"
                                 placeholder="800.000đ"
-                                className="bg-[#F7F9FB] w-[150px] mr-3 placeholder:text-center"
+                                className=" w-[150px] mr-3 placeholder:text-center"
                               />
                               <Input
                                 type="email"
                                 placeholder="1.000.000đ"
-                                className="bg-[#F7F9FB] w-[150px] mr-3 placeholder:text-center"
+                                className=" w-[150px] mr-3 placeholder:text-center"
                               />
                               <Input
                                 type="email"
                                 placeholder="2.000.000đ"
-                                className="bg-[#F7F9FB] w-[150px] placeholder:text-center"
+                                className=" w-[150px] placeholder:text-center"
                               />
                             </div>
                           </div>
@@ -1188,12 +1348,12 @@ export default function Home() {
                                 Amount to pay
                               </p>
                             </div>
-                            <div className="w-[210px] h-[39px]  ml-[220px] mt-[275px]   absolute ">
+                            {/* <div className="w-[210px] h-[39px]  ml-[220px] mt-[275px]   absolute ">
                               <p className="pt-2 text-black font-bold text-sm">
                                 Paid
                               </p>
-                            </div>
-                            <div className="w-[210px] h-[39px]  ml-[440px] mt-[275px]   absolute ">
+                            </div> */}
+                            <div className="w-[320px] h-[39px]  ml-[330px] mt-[275px]   absolute ">
                               <p className="pt-2 text-black font-bold text-sm">
                                 Change
                               </p>
@@ -1201,7 +1361,7 @@ export default function Home() {
                           </div>
 
                           <div className="flex justify-between w-[650px] ">
-                            <div className="w-[210px] h-[39px]   mt-[310px]   absolute ">
+                            <div className="w-[315px] h-[39px]   mt-[310px]   absolute ">
                               <Input
                                 disabled
                                 type="email"
@@ -1209,15 +1369,15 @@ export default function Home() {
                                 className="text-base font-bold text-right placeholder:text-[#71B02F] bg-[#E7F3DA]"
                               />
                             </div>
-                            <div className="w-[210px] h-[39px]  ml-[220px] mt-[310px]   absolute ">
+                            {/* <div className="w-[210px] h-[39px]  ml-[220px] mt-[310px]   absolute ">
                               <Input
                                 disabled
                                 type="email"
                                 placeholder="700.000đ"
                                 className="text-base font-bold text-right placeholder:text-black bg-[#E9EEF3]"
                               />
-                            </div>
-                            <div className="w-[210px] h-[39px]  ml-[440px] mt-[310px]   absolute ">
+                            </div> */}
+                            <div className="w-[320px] h-[39px]  ml-[330px] mt-[310px]   absolute ">
                               <Input
                                 disabled
                                 type="email"

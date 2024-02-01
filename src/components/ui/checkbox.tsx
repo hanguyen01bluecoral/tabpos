@@ -10,9 +10,8 @@ const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
 >(({ className, ...props }, ref) => {
+  
   const [isChecked, setIsChecked] = React.useState(false);
-
-
   const handleCheckChange = () => {
     setIsChecked(!isChecked);
   };

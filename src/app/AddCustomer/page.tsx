@@ -83,18 +83,11 @@ export default function Transactions() {
                 
                 <Dialog>
                   <DialogTrigger asChild>
-                      <div className="w-[130px] h-[45px] bg-white ml-6 px-[10px] py-[12px] rounded-sm">
+                      <div className="w-[130px] h-[45px] bg-white ml-6 px-[10px] py-[12px] rounded-sm cursor-pointer">
                           <div className="flex items-center space-x-2">
-                          <Checkbox
-                              id="terms"
-                              className="rounded-full border-none w-5 h-5 bg-[#D9D9D9]"
-                          />
-                          <label
-                              htmlFor="terms"
-                              className="text-black font-normal leading-5 text-[12px]"
-                          >
-                              Add Customer
-                          </label>
+                                <div className="w-4 h-4 rounded-full bg-slate-400">
+                                </div>
+                                <p className="text-[12px] font-[400] leading-normal">Add Customer</p>
                           </div>
                       </div>
                   </DialogTrigger>
@@ -215,9 +208,9 @@ export default function Transactions() {
                             <div className='flex w-full justify-between mt-0'>
                                 <div className=' w-[100%]'>
                                     <div className="flex items-center space-x-2">
-                                        <Checkbox id="terms" className='rounded-full'/>
+                                        <Checkbox id="add" className='rounded-full'/>
                                         <Label
-                                            htmlFor="terms"
+                                            htmlFor="add"
                                             className="text-black font-normal leading-5 text-[14px]"
                                         >
                                             Use same info for shipping
@@ -226,7 +219,7 @@ export default function Transactions() {
                                 </div>
                             </div>                     
                     <DialogFooter>
-                    <div className='flex w-full justify-between mt-5'>
+                    <div className='flex w-full justify-between mt-1'>
                                 <div className=' w-[100%]'>
                                     <Button className='w-full rounded-lg'> SAVE</Button>
                                 </div>

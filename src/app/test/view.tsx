@@ -197,9 +197,9 @@ const DetailView: React.FC<DetailViewProps> = ({ selectedItem, onSave }) => {
             <div className='flex w-full justify-between mt-5'>
                 <div className='ml-4 mr-4 w-[100%]'>
                     <div className="flex items-center space-x-2">
-                        <Checkbox id="terms" className='rounded-full'/>
+                        <Checkbox id="use" className='rounded-full'/>
                         <label
-                            htmlFor="terms"
+                            htmlFor="use"
                             className="text-black font-normal leading-5 text-[14px]"
                         >
                             Use same info for shipping

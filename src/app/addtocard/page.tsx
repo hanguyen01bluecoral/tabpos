@@ -6,26 +6,81 @@ import Quantity from "../Quantity";
 import { Card, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import React from "react";
+import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 
+interface CheckboxStates {
+  terms1: boolean;
+  terms2: boolean;
+  terms3: boolean;
+  terms4: boolean;
+}
+
+
 export default function AddToCard() {   
+
+  //xu ly chek cua color
   const [isChecked, setIsChecked] = React.useState(false);
+  const [isChecked2, setIsChecked2] = React.useState(false);
+  const [isChecked3, setIsChecked3] = React.useState(false);
+  const [isChecked4, setIsChecked4] = React.useState(false);
+
   const handleCheckboxChange = () => {
-    console.log(isChecked)
     setIsChecked(!isChecked);
-    console.log(isChecked)
   };
+  const handleCheckboxChange2 = () => {
+    setIsChecked2(!isChecked2);
+  };
+  const handleCheckboxChange3 = () => {
+    setIsChecked3(!isChecked3);
+  };
+  const handleCheckboxChange4 = () => {
+    setIsChecked4(!isChecked4);
+  };
+
+  //xu li check cua size
+  const [isSize , setIsSize] = React.useState(false);
+  const [isSize2 , setIsSize2] = React.useState(false);
+  const [isSize3 , setIsSize3] = React.useState(false);
+
+  const handleCheckboxSize = () => {
+    setIsSize(!isSize);
+  };
+  const handleCheckboxSize2 = () => {
+    setIsSize2(!isSize2);
+  };
+
+  const handleCheckboxSize3 = () => {
+    setIsSize3(!isSize3);
+  };
+
+
+
+  // const checkboxIds: Array<keyof CheckboxStates> = ["terms1", "terms2", "terms3", "terms4"];
+
+  // const [checkboxStates, setCheckboxStates] = useState<CheckboxStates>({
+  //   terms1: false,
+  //   terms2: false,
+  //   terms3: false,
+  //   terms4: false,
+  // });
+
+  // const handleCheckboxChange = (id: keyof CheckboxStates) => {
+  //   setCheckboxStates((prevState) => ({
+  //     ...prevState,
+  //     [id]: !prevState[id],
+  //   }));
+  // };
 
     return (
         <main>
-        <div className="w-[770px] h-[920px] rounded-lg bg-white border mb-[20px]  mx-auto relative">
+        <div className="w-[770px] h-[850px] rounded-lg bg-white border mb-[20px]  mx-auto relative">
           <div className="w-[730px] h-[39px] mx-4 mt-5 border-b-[1px] absolute flex justify-between">
-            <p className="pt-2 text-black font-bold text-base">
+            <p className="pt-1 text-black font-bold text-base">
               Chọn option sản phẩm
             </p>
             <svg
-              className="mt-3 mr-3 cursor-pointer"
+              className="mt-2 mr-3 cursor-pointer"
               width="15"
               height="15"
               viewBox="0 0 15 15"
@@ -87,61 +142,69 @@ export default function AddToCard() {
           <div className="w-[70px] h-[60px] absolute mt-[225px] mx-4 flex">
             <div className="flex">
               <Checkbox
+                checked={isChecked}
+                onClick={handleCheckboxChange}
                 id="terms1"
                 className="w-[80px] h-[40px] mr-3 mt-3 relative border-gray-200"
               />
-              <Label htmlFor="terms2" className="absolute  mt-[22px] ml-[109px] text-sm cursor-pointer" >Green</Label>
+              <Label htmlFor="terms1" className={`absolute mt-[22px] ml-5 text-sm cursor-pointer ${isChecked ? 'text-white' : 'text-[#000]'}`}>Green</Label>
               <Checkbox
+                checked={isChecked2}
+                onClick={handleCheckboxChange2}
                 id="terms2"
                 className="w-[80px] h-[40px] mr-3 mt-3 border-gray-200"
               />
-              <Label htmlFor="terms1" className="absolute  mt-[22px] ml-6 text-sm cursor-pointer">Red</Label>
+              <Label htmlFor="terms2" className={`absolute mt-[22px] ml-[119px] text-sm cursor-pointer ${isChecked2 ? 'text-white' : 'text-[#000]'}`}>Red</Label>
               <Checkbox
+               checked={isChecked3}
+               onClick={handleCheckboxChange3}
                 id="terms3"
                 className="w-[80px] h-[40px] mr-3 mt-3 relative border-gray-200"
               />
-              <Label  htmlFor="terms3" className="absolute  mt-[22px] ml-[205px] text-sm cursor-pointer">Black</Label>
+              <Label htmlFor="terms3"   className={`absolute mt-[22px] ml-[205px] text-sm cursor-pointer ${isChecked3 ? 'text-white' : 'text-[#000]'}`}>Black</Label>
               <Checkbox
+                checked={isChecked4}
+                onClick={handleCheckboxChange4}
                 id="terms4"
                 className="w-[80px] h-[40px] mr-3 mt-3 border-gray-200"
               />
-              <Label  htmlFor="terms4" className="absolute  mt-[22px] ml-[295px] text-sm cursor-pointer">White</Label>
+              <Label  htmlFor="terms4" className={`absolute mt-[22px] ml-[295px] text-sm cursor-pointer ${isChecked4 ? 'text-white' : 'text-[#000]'}`}>White</Label>
             </div>
           </div>
 
-          <div className="w-[730px] h-[25px] absolute mt-[302px] mx-4 flex">
+          <div className="w-[730px] h-[25px] absolute mt-[290px] mx-4 flex">
             <p className="font-semibold text-base h-2">Size</p>
           </div>
-          <div className="w-[730px] h-[60px] absolute mt-[327px] mx-4 flex">
+          <div className="w-[730px] h-[60px] absolute mt-[315px] mx-4 flex">
             <div className="flex">
               <Checkbox
+                checked={isSize}
+                onClick={handleCheckboxSize}
                 id="terms8"
                 className="w-[69px] h-[40px] mr-3 mt-3 relative border-gray-200"
               />{" "}
-              <Label htmlFor="terms8" className="absolute mt-6 ml-7">S</Label>
+              <Label htmlFor="terms8" className={`absolute mt-[22px] ml-7 text-sm cursor-pointer ${isSize ? 'text-white' : 'text-[#000]'}`}>S</Label>
               <Checkbox
+               checked={isSize2}
+               onClick={handleCheckboxSize2}
                 id="terms5"
                 className="w-[69px] h-[40px] mr-3 mt-3 border-gray-200"
               />{" "}
-              <Label  htmlFor="terms5" className="absolute  mt-6 ml-[105px] ">M</Label>
+              <Label  htmlFor="terms5" className={`absolute mt-[22px] ml-[106px] text-sm cursor-pointer ${isSize2 ? 'text-white' : 'text-[#000]'}`}>M</Label>
               <Checkbox
+                 checked={isSize3}
+                 onClick={handleCheckboxSize3}
                 id="terms6"
                 className="w-[69px] h-[40px] mr-3 mt-3 relative border-gray-200"
               />{" "}
-              <Label  htmlFor="terms6" className="absolute  mt-6 ml-[195px] ">L</Label>
-              
-              <Checkbox
-                id="terms7"
-                className="w-[69px] h-[40px] mr-3 mt-3 border-gray-200"
-              />{" "}
-              <Label  htmlFor="terms7" className="absolute  mt-6 ml-[270px] ">XL</Label>
+              <Label  htmlFor="terms6" className={`absolute mt-[22px] ml-[193px] text-sm cursor-pointer ${isSize3 ? 'text-white' : 'text-[#000]'}`}>L</Label>
             </div>
           </div>
 
-          <div className="w-[730px] h-[25px] absolute mt-[402px] mx-4 flex">
+          <div className="w-[730px] h-[25px] absolute mt-[380px] mx-4 flex">
             <p className="font-semibold text-base h-2">Additional info</p>
           </div>
-          <div className="w-[730px] h-[50px] absolute mt-[427px] mx-4 flex">
+          <div className="w-[730px] h-[50px] absolute mt-[415px] mx-4 flex">
             <div>
               <Input
                 className="w-[729px] focus:outline-none focus:border-none"
@@ -151,17 +214,17 @@ export default function AddToCard() {
             </div>
           </div>
 
-          <div className="w-[730px] h-[25px] absolute mt-[492px] mx-4 flex">
+          <div className="w-[730px] h-[25px] absolute mt-[465px] mx-4 flex">
             <p className="font-semibold text-base h-2">Number</p>
           </div>
-          <div className="w-[730px] h-[50px] absolute mt-[510px] mx-4 flex">
+          <div className="w-[730px] h-[50px] absolute mt-[480px] mx-4 flex">
             <Quantity/>
           </div>
 
-          <div className="w-[730px] h-[25px] absolute mt-[582px] mx-4 flex">
+          <div className="w-[730px] h-[25px] absolute mt-[525px] mx-4 flex">
             <p className="font-semibold text-base h-2">Up sales</p>
           </div>
-          <div className="w-[730px] h-[220px] absolute mt-[600px] mx-4 grid grid-cols-5 gap-2">
+          <div className="w-[730px] h-[220px] absolute mt-[550px] mx-4 grid grid-cols-5 gap-2">
             <Card className="flex flex-col justify-between mt-2 h-[210px] border-none rounded-sm">
               <CardHeader className="flex-row gap-4 items-center px-0 py-0">
                 <img
@@ -254,7 +317,7 @@ export default function AddToCard() {
             </Card>
           </div>
 
-          <div className="w-full h-[25px] absolute mt-[840px] mx-4 flex">
+          <div className="w-full h-[25px] absolute mt-[780px] mx-4 flex">
             <a href="#">
               <Button className="mt-2 mr-3 w-[730px] bg-slate-white border rounded-md text-black hover:text-white">
                 Add to cart

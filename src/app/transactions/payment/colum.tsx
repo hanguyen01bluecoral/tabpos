@@ -42,7 +42,7 @@ export type Payment = {
   oder: string
   in: number
   out: number
-  status: "XanhSM" | "GHTK" | "AhAmove" | "GrapQL"
+  status: "#444" | "#434" | "#414" | "#454"
   method: string
   note: string
   ngay:string

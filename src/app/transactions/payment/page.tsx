@@ -9,7 +9,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*31322",
         in: 5000,
         out: 316000,
-        status: "GrapQL",
+        status: "#444",
         method: "cash",
         note: "This is order in change",
         ngay:"22/01/2024 - 18:00:05"
@@ -19,7 +19,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#454",
         method: "cash",
         note: "-",
         ngay:"22/01/2024 - 18:00:05"
@@ -29,7 +29,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GrapQL",
+        status: "#444",
         method: "cash",
         note: "-",
         ngay:"22/01/2024 - 18:00:05"
@@ -39,7 +39,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "AhAmove",
+        status: "#414",
         method: "cash",
         note: "-",
         ngay:"22/01/2024 - 18:00:05"
@@ -49,7 +49,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#454",
         method: "cash",
         note: "This is order in change",
         ngay:"22/01/2024 - 18:00:05"
@@ -59,7 +59,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#444",
         method: "cash",
         note: "-",
         ngay:"22/01/2024 - 18:00:05"
@@ -69,7 +69,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#414",
         method: "cash",
         note: "-",
         ngay:"22/01/2024 - 18:00:05"
@@ -79,7 +79,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#444",
         method: "cash",
         note: "-",
         ngay:"22/01/2024 - 18:00:05"
@@ -89,7 +89,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#414",
         method: "cash",
         note: "This is order in change",
         ngay:"22/01/2024 - 18:00:05"
@@ -99,7 +99,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#454",
         method: "cash",
         note: "-",
         ngay:"22/01/2024 - 18:00:05"
@@ -109,7 +109,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#444",
         method: "cash",
         note: "This is order in change",
         ngay:"22/01/2024 - 18:00:05"
@@ -119,7 +119,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*31322",
         in: 5000,
         out: 316000,
-        status: "GrapQL",
+        status: "#414",
         method: "cash",
         note: "This is order in change",
         ngay:"22/01/2024 - 18:00:05"
@@ -129,7 +129,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#454",
         method: "cash",
         note: "-",
         ngay:"22/01/2024 - 18:00:05"
@@ -139,7 +139,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GrapQL",
+        status: "#434",
         method: "cash",
         note: "-",
         ngay:"22/01/2024 - 18:00:05"
@@ -149,7 +149,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "AhAmove",
+        status: "#434",
         method: "cash",
         note: "-",
         ngay:"22/01/2024 - 18:00:05"
@@ -159,7 +159,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#414",
         method: "cash",
         note: "This is order in change",
         ngay:"22/01/2024 - 18:00:05"
@@ -169,7 +169,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#434",
         method: "cash",
         note: "-",
         ngay:"22/01/2024 - 18:00:05"
@@ -179,7 +179,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#454",
         method: "cash",
         note: "-",
         ngay:"22/01/2024 - 18:00:05"
@@ -189,7 +189,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#434",
         method: "cash",
         note: "-",
         ngay:"22/01/2024 - 18:00:05"
@@ -199,7 +199,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#414",
         method: "cash",
         note: "This is order in change",
         ngay:"22/01/2024 - 18:00:05"
@@ -209,7 +209,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#434",
         method: "cash",
         note: "-",
         ngay:"22/01/2024 - 18:00:05"
@@ -219,7 +219,7 @@ async function getData(): Promise<Payment[]> {
         oder:"*412",
         in: 5000,
         out: 316000,
-        status: "GHTK",
+        status: "#434",
         method: "cash",
         note: "This is order in change",
         ngay:"22/01/2024 - 18:00:05"

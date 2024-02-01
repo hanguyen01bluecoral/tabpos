@@ -1,6 +1,6 @@
 export default function QrScaner() {
     return (
-        <div className="w-[470px] h-[499px] border mx-auto">
+        <div className="w-[470px] h-[499px] mx-auto">
         <div className="w-[440px] h-[39px] bg-white mx-4 mt-5 border-b-2 absolute flex justify-between">
           <p className="pt-2 text-black font-bold text-base">Scan QR</p>
           <svg
