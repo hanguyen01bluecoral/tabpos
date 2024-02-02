@@ -42,7 +42,7 @@ export default function RootLayout({
                 </a>
             </div>
             <div className="py-2 cursor-pointer">
-              <a href="orderNopaid">
+              <a href="/ordernotpaid">
                 <div className="w-[37px] h-[37px] bg-[#CCC] rounded-full"></div>
               </a>
             </div>

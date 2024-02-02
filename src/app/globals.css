@@ -60,6 +60,7 @@
     @apply font-Inter;
     background-color: #F7F9FB;
     box-shadow: none;
+    overflow-y: auto;
   }
 }
 

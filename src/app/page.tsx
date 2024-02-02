@@ -82,6 +82,7 @@ import {
 } from "@/components/ui/carousel"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Label } from "@/components/ui/label";
+import TestSearh from "./tkcus/page";
 
 
 export default function Home() {
@@ -167,10 +168,12 @@ export default function Home() {
       <div className="w-[400px] pt-[10px]  ml-[10px] h-screen flex  flex-col">
         <div className=" flex-grow h-full bg-white rounded-lg mb-[35px]">
           <div className="pt-3  rounded-xl">
-            <p className="ml-3 mb-1 text-sm font-medium">Customer</p>
-            <div className="mb-2 rounded-full w-[97%] h-[100%] bg-[#F7F9FB] flex  justify-between pt-3 pl-2 mx-auto ">
+            <p className="ml-3 mb-3 text-sm font-medium">Customer</p>
+            <div className="mb-3 rounded-full w-[97%] h-[100%]  flex  justify-between pt-3 pl-2 mx-auto ">
+              
+              <TestSearh />
               {/* search customer */}
-              <DropdownMenu open={open} onOpenChange={() => setOpen(!open)}>
+              {/* <DropdownMenu open={open} onOpenChange={() => setOpen(!open)}>
                 <DropdownMenuTrigger asChild>
                   <div className="flex justify-between items-center pb-3">
                     <Avatar className="text-center items-center w-5 h-5">
@@ -330,7 +333,7 @@ export default function Home() {
                     <DropdownMenuItem></DropdownMenuItem>
                   </DropdownMenuGroup>
                 </DropdownMenuContent>
-              </DropdownMenu>
+              </DropdownMenu> */}
 
               {/* add customer */}
               {/* <AlertDialog>
@@ -564,7 +567,7 @@ export default function Home() {
                 </AlertDialogContent>
               </AlertDialog> */}
 
-                <Dialog>
+                {/* <Dialog>
                   <DialogTrigger asChild>
                       <button className="inline-flex items-center justify-center ml-32 mr-[10px] mb-1  whitespace-nowrap mt-[-5px] text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-green-500 hover:text-white h-8 w-8 shrink-0 rounded-full">
                         <svg
@@ -720,7 +723,7 @@ export default function Home() {
                             </div>
                     </DialogFooter>
                   </DialogContent>
-                </Dialog>
+                </Dialog> */}
             </div>
 
             {/* table products */}

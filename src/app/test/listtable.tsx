@@ -30,7 +30,7 @@ const ListTable: React.FC<ListTableProps> = ({ data, onRowClick }) => {
       <tbody>
         {data.map((item, index) => (
             <div key={index} onClick={() => onRowClick(item)} className='cursor-pointer'>
-                <div className="w-[635px] h-[65px] p-4 bg-white rounded border-b border-zinc-100 justify-start items-center inline-flex hover:bg-slate-100">
+                <div className="w-[670px] h-[65px] p-4 bg-white rounded border-b border-zinc-100 justify-start items-center inline-flex hover:bg-slate-100">
                     <div className='flex'>
                         <div className="w-8 h-8 rounded-full bg-slate-300">
                         <svg
