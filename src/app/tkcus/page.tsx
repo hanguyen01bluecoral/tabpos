@@ -62,6 +62,14 @@ const frameworks = [
     value: "astro",
     label: "Tran Van C",
   },
+  {
+    value: "no",
+    label: "Tran Van D",
+  },
+  {
+    value: "yes",
+    label: "Tran Van F",
+  },
 ];
 
 export default function TestSearh() {
@@ -111,7 +119,7 @@ export default function TestSearh() {
         </PopoverTrigger>
         <Dialog>
           <DialogTrigger asChild>
-            <button className="inline-flex items-center justify-center ml-[320px] mt-[-39px]   whitespace-nowrap  text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-green-500 hover:text-white h-8 w-8 shrink-0 rounded-full">
+            <button className="inline-flex items-center justify-center ml-[325px] mt-[-38px]   whitespace-nowrap  text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-green-500 hover:text-white h-8 w-8 shrink-0 rounded-full">
               <svg
                 width="15"
                 height="15"
@@ -294,7 +302,7 @@ export default function TestSearh() {
             </DialogFooter>
           </DialogContent>
         </Dialog>
-        <PopoverContent className="w-[370px] p-0 mt-[12px] -ml-[5px] rounded-md">
+        <PopoverContent className="w-[370px] h-[360px] p-0 mt-[12px] -ml-[5px] rounded-md  scrollbar-none">
           <div className="w-[92%] flex justify-between border-b-[1px] scrollbar-thin pb-2 ml-4 mr-0 pt-3">
             <p className="pt-1 text-black font-bold text-base">Customer</p>
             <svg
@@ -316,11 +324,11 @@ export default function TestSearh() {
           </div>
           <Command>
             <CommandInput
-              placeholder="Search framework..."
+              placeholder="Search customer..."
               className="mb-2 mt-2"
             />
-            <CommandEmpty>No framework found.</CommandEmpty>
-            <CommandGroup>
+            <CommandEmpty>No customer found.</CommandEmpty>
+            <CommandGroup className="h-[300px] overflow-y-auto scrollbar-thin">
               {frameworks.map((framework) => (
                 <CommandItem
                   key={framework.value}
