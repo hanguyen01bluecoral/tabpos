@@ -16,7 +16,7 @@ const Quantity: React.FC = () => {
   
   return (
     <div className="flex items-center justify-center space-x-5">
-      <button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-green-500 hover:text-white h-5 w-5 shrink-0 rounded-full"
+      <button className="border-none bg-[#F5F5F2] inline-flex items-center justify-center whitespace-nowrap  text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-green-500 hover:text-white h-5 w-5 shrink-0 rounded-full"
       onClick={decreaseQuantity}>
         <svg
           width="10"
@@ -36,12 +36,12 @@ const Quantity: React.FC = () => {
         <span className="sr-only"></span>
       </button>
       <div className="flex-grow-0 text-center">
-        <div className="text-sm font-bold tracking-tighter w-[40px] h-full border ml-2">
+        <div className="text-sm font-bold tracking-tighter w-[40px] h-[40px] text-center pt-[9px] border border-[#F5F5F5] ml-[0px]">
         {quantity}
         </div>
         <div className="text-[0.60rem] uppercase text-muted-foreground"></div>
       </div>
-      <button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-green-500 hover:text-white h-5 w-5 shrink-0 rounded-full"
+      <button className="border-none bg-[#F5F5F2] ml-[10px] inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-green-500 hover:text-white h-5 w-5 shrink-0 rounded-full"
        onClick={increaseQuantity}>
         <svg
           width="15"

@@ -99,7 +99,7 @@ export default function Home() {
   return (
     <nav className="w-full h-screen flex bg-[#F7F9FB] flex-grow ">
       {/* khoi itemproduct */}
-      <div className="w-[calc(100%-600px)] pt-[10px] h-screen ml-[15px] flex-grow">
+      <div className="w-[calc(100%-600px)] pt-[20px] h-screen ml-[15px] flex-grow">
 
         <div className="">
           <HeaderNav />
@@ -727,13 +727,13 @@ export default function Home() {
             </div>
 
             {/* table products */}
-            <Table className="mt-2">
+            <Table className="mt-2 border-none">
               <div className="h-[100%] overflow-y-auto scrollbar-none">
                 <TableCaption></TableCaption>
-                <TableHeader>
-                  <TableRow>
+                <TableHeader className="border-none">
+                  <TableRow className="border-none">
                     <TableHead className="w-[100px] text-xs">NAME</TableHead>
-                    <TableHead className="text-center text-xs">
+                    <TableHead className="text-left text-xs">
                       QUANTITY
                     </TableHead>
                     <TableHead className="text-xs text-left">PRICE</TableHead>
@@ -751,7 +751,7 @@ export default function Home() {
                     <TableCell>
                       <Quantity />
                     </TableCell>
-                    <TableCell className="text-left">1000đ</TableCell>
+                    <TableCell className="text-left">100000đ</TableCell>
                     <TableCell className="text-right">
                       <Checkbox id="terms"  className="w-[20px] h-[20px] rounded-full bg-gray-300 border-none"/>
                     </TableCell>
@@ -778,7 +778,7 @@ export default function Home() {
                         <p className="text-xs">Size A, Black</p>
                       </div>
                     </TableCell>
-                    <TableCell>
+                    <TableCell className="">
                       <Quantity />
                     </TableCell>
                     <TableCell className="text-left">1000đ</TableCell>
@@ -989,27 +989,27 @@ export default function Home() {
                               <Button className="w-[124px] h-[60px] rounded-tl-lg border bg-white text-black hover:text-white">
                                 1
                               </Button>
-                              <Button className="w-[124px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[124px] h-[60px] rounded-none border-t border-r border-b bg-white text-black hover:text-white">
                                 2
                               </Button>
-                              <Button className="w-[125px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[125px] h-[60px] rounded-none border-t border-r border-b bg-white text-black hover:text-white">
                                 3
                               </Button>
-                              <Button className="w-[260px] h-[60px] text-sm font-[300] rounded-tr-lg border bg-white text-black hover:text-white">
+                              <Button className="w-[260px] h-[60px] text-sm font-[300] border-t border-r border-b rounded-tr-lg  bg-white text-black hover:text-white">
                                 Clear
                               </Button>
                             </div>
                             <div className=" rounded-lg flex">
-                              <Button className="w-[124px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[124px] h-[60px] rounded-none border-l border-r border-b bg-white text-black hover:text-white">
                                 4
                               </Button>
-                              <Button className="w-[124px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[124px] h-[60px] rounded-none  border-r border-b bg-white text-black hover:text-white">
                                 5
                               </Button>
-                              <Button className="w-[125px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[125px] h-[60px] rounded-none border-r border-b bg-white text-black hover:text-white">
                                 6
                               </Button>
-                              <Button className="w-[260px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[260px] h-[60px] rounded-none border-r border-b bg-white text-black hover:text-white">
                                 <svg
                                   width="25"
                                   height="25"
@@ -1027,30 +1027,30 @@ export default function Home() {
                               </Button>
                             </div>
                             <div className=" rounded-lg">
-                              <Button className="w-[124px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[124px] h-[60px] rounded-none border-l border-r border-b bg-white text-black hover:text-white">
                                 7
                               </Button>
-                              <Button className="w-[124px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[124px] h-[60px] rounded-none border-r border-b bg-white text-black hover:text-white">
                                 8
                               </Button>
-                              <Button className="w-[125px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[125px] h-[60px] rounded-none border-r border-b bg-white text-black hover:text-white">
                                 9
                               </Button>
-                              <Button className="w-[260px] h-[60px] text-sm rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[260px] h-[60px] text-sm rounded-none border-r border-b bg-white text-black hover:text-white">
                                 SAVE SHIPING
                               </Button>
                             </div>
                             <div className=" rounded-lg">
-                              <Button className="w-[124px] h-[60px] rounded-bl-lg border bg-white text-black hover:text-white">
+                              <Button className="w-[124px] h-[60px] rounded-bl-lg border-l border-r border-b bg-white text-black hover:text-white">
                                 0
                               </Button>
-                              <Button className="w-[124px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[124px] h-[60px] rounded-none border-r border-b bg-white text-black hover:text-white">
                                 .
                               </Button>
-                              <Button className="w-[125px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[125px] h-[60px] rounded-none border-r border-b bg-white text-black hover:text-white">
                                 00
                               </Button>
-                              <Button className="w-[260px] h-[60px] rounded-br-lg border text-black bg-[#F5F5F5] hover:text-white">
+                              <Button className="w-[260px] h-[60px] rounded-br-lg  border-r border-b text-black bg-[#F5F5F5] hover:text-white">
                                 BACK
                               </Button>
                             </div>
@@ -1240,7 +1240,7 @@ export default function Home() {
             </div>
 
             {/* checkout */}
-            <Button className="w-[99%] rounded-md mt-4 px-0 h-[63px]">
+            <Button className="w-[99%] rounded-md mt-4 px-0 h-[63px] mb-3">
               <div className="flex ">
                 <Dialog>
                   <DialogTrigger>
@@ -1392,30 +1392,30 @@ export default function Home() {
 
                           <div className="w-[650px] h-[243px]   mt-[370px]   absolute rounded-lg">
                             <div className=" rounded-lg">
-                              <Button className="w-[126px] h-[60px] rounded-tl-lg border bg-white text-black hover:text-white">
+                              <Button className="w-[126px] h-[60px] rounded-tl-lg border  bg-white text-black hover:text-white">
                                 1
                               </Button>
-                              <Button className="w-[126px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[126px] h-[60px] rounded-none border-t border-r border-b  bg-white text-black hover:text-white">
                                 2
                               </Button>
-                              <Button className="w-[125px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[125px] h-[60px] rounded-none border-t border-r border-b bg-white text-black hover:text-white">
                                 3
                               </Button>
-                              <Button className="w-[273px] h-[60px] text-sm font-[300] rounded-tr-lg border bg-white text-black hover:text-white">
+                              <Button className="w-[273px] h-[60px] text-sm font-[300] border-t border-r border-b rounded-tr-lg  bg-white text-black hover:text-white">
                                 Clear
                               </Button>
                             </div>
                             <div className=" rounded-lg flex">
-                              <Button className="w-[126px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[126px] h-[60px] rounded-none border-l border-r border-b bg-white text-black hover:text-white">
                                 4
                               </Button>
-                              <Button className="w-[126px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[126px] h-[60px] rounded-none border-r border-b bg-white text-black hover:text-white">
                                 5
                               </Button>
-                              <Button className="w-[125px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[125px] h-[60px] rounded-none border-r border-b bg-white text-black hover:text-white">
                                 6
                               </Button>
-                              <Button className="w-[273px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[273px] h-[60px] rounded-none border-r border-b bg-white text-black hover:text-white">
                                 <svg
                                   width="25"
                                   height="25"
@@ -1433,30 +1433,30 @@ export default function Home() {
                               </Button>
                             </div>
                             <div className=" rounded-lg">
-                              <Button className="w-[126px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[126px] h-[60px] rounded-none border-l border-r border-b bg-white text-black hover:text-white">
                                 7
                               </Button>
-                              <Button className="w-[126px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[126px] h-[60px] rounded-none border-r border-b bg-white text-black hover:text-white">
                                 8
                               </Button>
-                              <Button className="w-[125px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[125px] h-[60px] rounded-none  border-r border-b bg-white text-black hover:text-white">
                                 9
                               </Button>
-                              <Button className="w-[273px] h-[60px] text-sm rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[273px] h-[60px] text-sm rounded-none border-r border-b bg-white text-black hover:text-white">
                                 PAY & PRINT
                               </Button>
                             </div>
                             <div className=" rounded-lg">
-                              <Button className="w-[126px] h-[60px] rounded-bl-lg border bg-white text-black hover:text-white">
+                              <Button className="w-[126px] h-[60px] rounded-bl-lg border-l border-r border-b bg-white text-black hover:text-white">
                                 0
                               </Button>
-                              <Button className="w-[126px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[126px] h-[60px] rounded-none  border-r border-b bg-white text-black hover:text-white">
                                 .
                               </Button>
-                              <Button className="w-[125px] h-[60px] rounded-none border bg-white text-black hover:text-white">
+                              <Button className="w-[125px] h-[60px] rounded-none border-r border-b bg-white text-black hover:text-white">
                                 00
                               </Button>
-                              <Button className="w-[273px] h-[60px] rounded-br-lg border text-black bg-[#F5F5F5] hover:text-white">
+                              <Button className="w-[273px] h-[60px] rounded-br-lg border-r border-b text-black bg-[#F5F5F5] hover:text-white">
                                 PRINT
                               </Button>
                             </div>

@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={cn("flex box-border",inter.className)}>
         {/* nav */}
         <div className=" pl-3 pr-4 h-screen flex flex-1 flex-col flex-shrink-0 flex-grow-0 justify-between bg-white">
-          <div className=" pl-2 ">
+          <div className=" pl-2 mt-2">
             <div className="py-2 ml-[-2px] rounded-none cursor-pointer">
               <div className="w-[45px] h-[45px] bg-black rounded-sm"></div>
             </div>
@@ -52,7 +52,7 @@ export default function RootLayout({
               </a>
             </div>
           </div>
-          <div className="pl-2 mt-auto pt-[100%]">
+          <div className="pl-2 mt-auto pt-[100%] mb-3">
             <div className="py-3 cursor-pointer">
               <div className="w-[37px] h-[37px] bg-[#CCC] rounded-full"></div>
             </div>

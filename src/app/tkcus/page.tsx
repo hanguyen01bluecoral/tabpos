@@ -88,7 +88,7 @@ export default function TestSearh() {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-[370px] h-[44px] -mt-4 rounded-full justify-between bg-[#F7F9FB]"
+            className="w-[370px] h-[44px] -mt-4 rounded-full justify-between border-none bg-[#F7F9FB]"
           >
             {value ? (
               <div className="flex">
@@ -119,7 +119,7 @@ export default function TestSearh() {
         </PopoverTrigger>
         <Dialog>
           <DialogTrigger asChild>
-            <button className="inline-flex items-center justify-center ml-[325px] mt-[-38px]   whitespace-nowrap  text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-green-500 hover:text-white h-8 w-8 shrink-0 rounded-full">
+            <button className="inline-flex items-center justify-center ml-[328px] mt-[-38px]   whitespace-nowrap  text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-green-500 hover:text-white h-8 w-8 shrink-0 rounded-full">
               <svg
                 width="15"
                 height="15"
