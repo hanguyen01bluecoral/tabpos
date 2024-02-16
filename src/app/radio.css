@@ -1,0 +1,46 @@
+input[type="radio"] {
+    display: none;
+  }
+  
+  /* Tạo kiểu cho radio button tùy chỉnh */
+  .radio-container {
+    position: relative;
+    display: inline-block;
+    margin-right: 0px;
+    
+  }
+  
+  .radio-label {
+    display: inline-block;
+    width: 100%;
+    padding: 5px 15px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Khi radio được chọn, thay đổi màu nền và viền */
+  input[type="radio"]:checked + .radio-label {
+    
+    background-color: #71B02F;
+    color: white;
+  }
+  
+  /* Tạo kiểu cho radio button */
+  .radio-label::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+  }
+  
+  /* Khi radio được chọn, hiển thị tick */
+  input[type="radio"]:checked + .radio-label::before {
+  
+    text-align: center;
+    line-height: 20px;
+  }
