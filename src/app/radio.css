@@ -25,6 +25,12 @@ input[type="radio"] {
     background-color: #71B02F;
     color: white;
   }
+
+  input[type="radio"]:checked + .radio-label .box{
+  
+    background-color: black;
+    color: white;
+  }
   
   /* Tạo kiểu cho radio button */
   .radio-label::before {

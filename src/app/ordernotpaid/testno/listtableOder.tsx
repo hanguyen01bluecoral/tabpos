@@ -3,20 +3,19 @@ import React from 'react';
 
 interface ListTableProps {
     data: Array<{  
-      
-      title: string;
-      date: string;
-      sate: string; 
-      coin: string;
-      name:string;  }>;
+                  title: string;
+                  date: string;
+                  sate: string; 
+                  coin: string;
+                  name:string;  
+                }>;
   onRowClick: (item: {  
-    
-    title: string;
-    date: string;
-    sate: string;
-    coin: string;
-    name:string;
-  }) => void;
+                        title: string;
+                        date: string;
+                        sate: string;
+                        coin: string;
+                        name:string;
+                      }) => void;
 }
 const ITEMS_PER_PAGE = 5; //moi items tren trang la 5
 
