@@ -1,17 +1,20 @@
-"use client";
-import "./globals.css";
-import "./radio.css";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import React from 'react';
+import TestSearh from '../tkcus/page';
 
+import "../radio.css";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+  } from "@/components/ui/dialog"
+  import { Input } from "@/components/ui/input"
+
+import { Button } from "@/components/ui/button";
+import Quantity from '../Quantity';
 import {
   Table,
   TableBody,
@@ -23,18 +26,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
-} from "@/components/ui/command";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -46,714 +37,56 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Textarea } from "@/components/ui/textarea";
-import React, { createContext } from "react";
-import HeaderNav from "./HeaderNav";
-import NavItems from "./NavItems";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { CopyMinusIcon, SaveIcon } from "lucide-react";
-import Quantity from "./Quantity";
-import { Checkbox } from "@/components/ui/checkbox";
-import CheckboxWithLabel from "./CheckboxWithLabel";  
-import { Value } from "@radix-ui/react-select";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Label } from "@/components/ui/label";
-import TestSearh from "./tkcus/page";
-import Product from "./Products";
-import ProductSelection from "./prd/ProductSelection";
-import OrderTable from "./prd/OrderTable";
-
+import { Checkbox } from '@/components/ui/checkbox';
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Textarea } from '@/components/ui/textarea';
+import HeaderNav from '../HeaderNav';
+import NavItems from '../NavItems';
+import ProductSelection from './ProductSelection';
 interface Product {
-  id: number;
-  name: string;
-  imageUrl: string;
-  desc: string;
-  gia: string;
-}
-
-// Props cho component ProductSelection
-interface ProductSelectionProps {
-  products: Product[];
-  orderedProducts: Product[];
-  setOrderedProducts: React.Dispatch<React.SetStateAction<Product[]>>;
-}
-
-
-export default function Home() {
-
-  const [activeItem, setActiveItem] = React.useState(null);
-
-  const handleItemClick = (itemId: any | React.SetStateAction<null>) => {
-    setActiveItem(itemId === activeItem ? null : itemId);
-  };
-
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  function handleCheckChange(): void {
-    throw new Error("Function not implemented.");
+    id: number;
+    name: string;
+    imageUrl: string;
+    desc: string;
+    gia: string;
   }
 
-  //row
-  const [isRowVisible, setIsRowVisible] = React.useState(true);
-  const handleIconClick = () => {
-    setIsRowVisible(false);
-  };
+  interface OrderTableProps {
+    orderedProducts: Product[];
+  }
 
+const OrderTable: React.FC<OrderTableProps> = ({ orderedProducts }) => {
+    const [activeItem, setActiveItem] = React.useState(null);
+
+    const handleItemClick = (itemId: any | React.SetStateAction<null>) => {
+      setActiveItem(itemId === activeItem ? null : itemId);
+    };
+
+  
+    const [open, setOpen] = React.useState(false);
+    const handleClose = () => {
+      setOpen(false);
+    };
+  
+    function handleCheckChange(): void {
+      throw new Error("Function not implemented.");
+    }
+  
+    //row
+    const [isRowVisible, setIsRowVisible] = React.useState(true);
+    const handleIconClick = () => {
+      setIsRowVisible(false);
+    };
 
   return (
-    <nav className="w-full h-screen flex bg-[#F7F9FB] flex-grow ">
-      {/* khoi itemproduct */}
-      <div className="w-[calc(100%-600px)] pt-[20px] h-screen ml-[15px] flex-grow">
-
-        <div className="">
-          <HeaderNav />
-        </div>
-
-        <div className=" mt-[20px] h-[50px] flex overflow-x-auto scrollbar-none flex-grow relative">
-          
-          <div className="absolute w-full h-[45px]">
-            <div className="absolute flex overflow-x-auto scrollbar-none">
-              <NavItems/>
-              
-                {/* <Carousel className="w-full">
-                  <CarouselContent className="-ml-1">
-                    {Array.from({ length: 100 }).map((_, index) => (
-                      <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-[115px]">
-                        <div className="">
-                        <CheckboxWithLabel key={index} id={`nav${index}`} label={`Items ${index}`} onChange={handleCheckChange} />
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                </Carousel> */}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-[8px] lg:h-[457px] md:h-[600px] overflow-y-auto scrollbar-none flex justify-between flex-wrap gap-y-[10px]">
-        {/* <Product/> */}
-        {/* <ProductSelection/> */}
-        <ProductSelection products={[
-          { id: 1, name: 'kep toc', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lr3tzi37p09ld1', desc: 'Stock (102)', gia: '12000' },
-          { id: 2, name: 'day thun', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 3, name: 'Tshirt', imageUrl: 'https://down-vn.img.susercontent.com/file/sg-11134201-7rbmh-lqj0c5snvazq28', desc: 'Stock (102)', gia: '12000' },
-          { id: 4, name: 'Card', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lg3gw0fyia222a', desc: 'Stock (102)', gia: '12000' },
-          { id: 5, name: 'Ao thun', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 6, name: 'Day lung', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 7, name: 'Op lung', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lpr0li0r7xvb94_tn', desc: 'Stock (102)', gia: '12000' },
-          { id: 7, name: 'Op lung', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 7, name: 'Op lung', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 1, name: 'kep toc', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lpr0li0r7xvb94_tn', desc: 'Stock (102)', gia: '12000' },
-          { id: 2, name: 'day thun', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 3, name: 'Tshirt', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 4, name: 'Card', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 5, name: 'Ao thun', imageUrl: 'https://down-vn.img.susercontent.com/file/sg-11134201-7rbmh-lqj0c5snvazq28', desc: 'Stock (102)', gia: '12000' },
-          { id: 6, name: 'Day lung', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lpr0li0r7xvb94_tn', desc: 'Stock (102)', gia: '12000' },
-          { id: 7, name: 'Op lung', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 7, name: 'Op lung', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 7, name: 'Op lung', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lpr0li0r7xvb94_tn', desc: 'Stock (102)', gia: '12000' },
-          { id: 1, name: 'kep toc', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lr3tzi37p09ld1', desc: 'Stock (102)', gia: '12000' },
-          { id: 2, name: 'day thun', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 3, name: 'Tshirt', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 4, name: 'Card', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 5, name: 'Ao thun', imageUrl: 'https://down-vn.img.susercontent.com/file/sg-11134201-7rbmh-lqj0c5snvazq28', desc: 'Stock (102)', gia: '12000' },
-          { id: 6, name: 'Day lung', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 7, name: 'Op lung', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lp0dvbcqes7v97', desc: 'Stock (102)', gia: '12000' },
-          { id: 7, name: 'Op lung', imageUrl: 'https://down-vn.img.susercontent.com/file/sg-11134201-7rbmh-lqj0c5snvazq28', desc: 'Stock (102)', gia: '12000' },
-          { id: 7, name: 'Balo nam', imageUrl: 'https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lg3gw0fyia222a', desc: 'Stock (102)', gia: '12000' },
-        ]} orderedProducts={[]} setOrderedProducts={function (value: React.SetStateAction<Product[]>): void {
-            throw new Error("Function not implemented.");
-          } } />
-        </div>
-      </div>
-
-      {/* khoi customer */}
-      <div className="w-[400px] pt-[10px]  ml-[10px] h-screen flex  flex-col">
+    <div className="w-[400px] pt-[10px]  ml-[10px] h-screen flex  flex-col">
         <div className=" flex-grow h-full bg-white rounded-lg mb-[35px]">
           <div className="pt-3  rounded-xl">
             <p className="ml-3 mb-3 text-sm font-medium">Customer</p>
             <div className="mb-3 rounded-full w-[97%] h-[100%] flex  justify-between pt-3 pl-2 mx-auto ">
               
               <TestSearh />
-              {/* search customer */}
-              {/* <DropdownMenu open={open} onOpenChange={() => setOpen(!open)}>
-                <DropdownMenuTrigger asChild>
-                  <div className="flex justify-between items-center pb-3">
-                    <Avatar className="text-center items-center w-5 h-5">
-                      <AvatarImage src="https://github.com/shadcn.png" />
-                      <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
-                    <p className="pl-2 text-black font-medium text-nowrap whitespace-nowrap">
-                      Nguyen Le (500 Points)
-                    </p>
-                  </div>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-[100%] h-[470px]">
-                  <DropdownMenuLabel>
-                    <div className="w-[85%] flex justify-between border-b-[1px] scrollbar-thin pb-2 ml-6 mr-0">
-                      <p className="pt-2 text-black font-bold text-base">
-                        Customer
-                      </p>
-                      <svg
-                        className="mt-3 mr-0 cursor-pointer"
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        onClick={handleClose}
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M13.2929 0.292893C13.6834 -0.0976311 14.3166 -0.0976311 14.7071 0.292893C15.0976 0.683417 15.0976 1.31658 14.7071 1.70711L8.91421 7.5L14.7071 13.2929C15.0976 13.6834 15.0976 14.3166 14.7071 14.7071C14.3166 15.0976 13.6834 15.0976 13.2929 14.7071L7.5 8.91421L1.70711 14.7071C1.31658 15.0976 0.683418 15.0976 0.292894 14.7071C-0.0976312 14.3166 -0.0976312 13.6834 0.292894 13.2929L6.08579 7.5L0.292893 1.70711C-0.0976309 1.31658 -0.0976309 0.683417 0.292893 0.292893C0.683418 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L7.5 6.08579L13.2929 0.292893Z"
-                          fill="black"
-                        />
-                      </svg>
-                    </div>
-
-                    <div className="w-[100%] h-[409px] bg-white mx-4 mt-[0px]   flex justify-between">
-                      <Command className="rounded-lg">
-                        <CommandInput placeholder="Type a command or search..." />
-                        <CommandList>
-                          <CommandEmpty>No results found.</CommandEmpty>
-                          <CommandGroup heading="">
-                            <CommandItem className="mt-3 w-[92%]">
-                              <Avatar className="text-center items-center w-[30px] h-[30px]">
-                                <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>CN</AvatarFallback>
-                              </Avatar>
-                              <div className="items-center mt-1">
-                                <p className="pl-4 text-black font-medium">
-                                  Nguyen Le (500 Points)
-                                </p>
-                                <p className="pl-4 text-[9px]">034999902</p>
-                              </div>
-                            </CommandItem>
-                            <CommandItem className="mt-0 w-[92%]">
-                              <Avatar className="text-center items-center w-[30px] h-[30px]">
-                                <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>CN</AvatarFallback>
-                              </Avatar>
-                              <div className="items-center mt-1">
-                                <p className="pl-4 text-black font-medium">
-                                  Hoàng Dũng(500 Points)
-                                </p>
-                                <p className="pl-4 text-[9px]">034999902</p>
-                              </div>
-                            </CommandItem>
-                            <CommandItem className="mt-0 w-[92%]">
-                              <Avatar className="text-center items-center w-[30px] h-[30px]">
-                                <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>CN</AvatarFallback>
-                              </Avatar>
-                              <div className="items-center mt-1">
-                                <p className="pl-4 text-black font-medium">
-                                  Nguyen Van Nam (500 Points)
-                                </p>
-                                <p className="pl-4 text-[9px]">034999902</p>
-                              </div>
-                            </CommandItem>
-                            <CommandItem className="mt-0 w-[92%]">
-                              <Avatar className="text-center items-center w-[30px] h-[30px]">
-                                <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>CN</AvatarFallback>
-                              </Avatar>
-                              <div className="items-center mt-1">
-                                <p className="pl-4 text-black font-medium">
-                                  Hà Linh (500 Points)
-                                </p>
-                                <p className="pl-4 text-[9px]">034999902</p>
-                              </div>
-                            </CommandItem>
-                            <CommandItem className="mt-0 w-[92%]">
-                              <Avatar className="text-center items-center w-[30px] h-[30px]">
-                                <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>CN</AvatarFallback>
-                              </Avatar>
-                              <div className="items-center mt-1">
-                                <p className="pl-4 text-black font-medium">
-                                  Nguyễn Văn Khôi (500 Points)
-                                </p>
-                                <p className="pl-4 text-[9px]">034999902</p>
-                              </div>
-                            </CommandItem>
-                            <CommandItem className="mt-0 w-[92%]">
-                              <Avatar className="text-center items-center w-[30px] h-[30px]">
-                                <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>CN</AvatarFallback>
-                              </Avatar>
-                              <div className="items-center mt-1">
-                                <p className="pl-4 text-black font-medium">
-                                  Trần Văn Hùng (500 Points)
-                                </p>
-                                <p className="pl-4 text-[9px]">034999902</p>
-                              </div>
-                            </CommandItem>
-                            <CommandItem className="mt-0 w-[92%]">
-                              <Avatar className="text-center items-center w-[30px] h-[30px]">
-                                <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>CN</AvatarFallback>
-                              </Avatar>
-                              <div className="items-center mt-1">
-                                <p className="pl-4 text-black font-medium">
-                                  Hoàng Hồng Anh (500 Points)
-                                </p>
-                                <p className="pl-4 text-[9px]">034999902</p>
-                              </div>
-                            </CommandItem>
-                            <CommandItem className="mt-0 w-[92%]">
-                              <Avatar className="text-center items-center w-[30px] h-[30px]">
-                                <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>CN</AvatarFallback>
-                              </Avatar>
-                              <div className="items-center mt-1">
-                                <p className="pl-4 text-black font-medium">
-                                  Nguyễn Lan Hồng (500 Points)
-                                </p>
-                                <p className="pl-4 text-[9px]">034999902</p>
-                              </div>
-                            </CommandItem>
-                            <CommandItem className="mt-0 w-[92%]">
-                              <Avatar className="text-center items-center w-[30px] h-[30px]">
-                                <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>CN</AvatarFallback>
-                              </Avatar>
-                              <div className="items-center mt-1">
-                                <p className="pl-4 text-black font-medium">
-                                  Kim Dung (500 Points)
-                                </p>
-                                <p className="pl-4 text-[9px]">034999902</p>
-                              </div>
-                            </CommandItem>
-                          </CommandGroup>
-                        </CommandList>
-                      </Command>
-                    </div>
-                  </DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuGroup>
-                    <DropdownMenuItem></DropdownMenuItem>
-                  </DropdownMenuGroup>
-                </DropdownMenuContent>
-              </DropdownMenu> */}
-
-              {/* add customer */}
-              {/* <AlertDialog>
-                <AlertDialogTrigger asChild>
-                  <button className="inline-flex items-center justify-center ml-32 mr-[10px] mb-1  whitespace-nowrap mt-[-5px] text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-green-500 hover:text-white h-8 w-8 shrink-0 rounded-full">
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 15 15"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4"
-                    >
-                      <path
-                        d="M8 2.75C8 2.47386 7.77614 2.25 7.5 2.25C7.22386 2.25 7 2.47386 7 2.75V7H2.75C2.47386 7 2.25 7.22386 2.25 7.5C2.25 7.77614 2.47386 8 2.75 8H7V12.25C7 12.5261 7.22386 12.75 7.5 12.75C7.77614 12.75 8 12.5261 8 12.25V8H12.25C12.5261 8 12.75 7.77614 12.75 7.5C12.75 7.22386 12.5261 7 12.25 7H8V2.75Z"
-                        fill="currentColor"
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                    <span className="sr-only"></span>
-                  </button>
-                </AlertDialogTrigger>
-                <AlertDialogContent>
-                  <AlertDialogHeader>
-                    <AlertDialogTitle className="border-none ml-[15px]">
-                      <div className=" flex justify-between">
-                        <p className="pt-0 text-black font-bold text-base">
-                          Marion Smith
-                        </p>
-                        <AlertDialogCancel className="border-none hover:bg-transparent p-1">
-                          <svg
-                            className="mt-0 mr-3 mb-3 cursor-pointer"
-                            width="15"
-                            height="15"
-                            viewBox="0 0 15 15"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M13.2929 0.292893C13.6834 -0.0976311 14.3166 -0.0976311 14.7071 0.292893C15.0976 0.683417 15.0976 1.31658 14.7071 1.70711L8.91421 7.5L14.7071 13.2929C15.0976 13.6834 15.0976 14.3166 14.7071 14.7071C14.3166 15.0976 13.6834 15.0976 13.2929 14.7071L7.5 8.91421L1.70711 14.7071C1.31658 15.0976 0.683418 15.0976 0.292894 14.7071C-0.0976312 14.3166 -0.0976312 13.6834 0.292894 13.2929L6.08579 7.5L0.292893 1.70711C-0.0976309 1.31658 -0.0976309 0.683417 0.292893 0.292893C0.683418 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L7.5 6.08579L13.2929 0.292893Z"
-                              fill="black"
-                            />
-                          </svg>
-                        </AlertDialogCancel>
-                      </div>
-                    </AlertDialogTitle>
-
-                    <AlertDialogDescription className="w-[650px] h-[540px] relative">
-                      <div className="w-[670px] h-[405px] bg-white mt-[-10px]  ml-[0px] rounded-lg absolute">
-                        <div className="flex justify-between ">
-                          <div className="w-[325px] h-[39px]  mx-4 mt-[-25px]  absolute ">
-                            <p className="pt-2 text-black font-bold text-sm">
-                              Firsr name
-                            </p>
-                          </div>
-
-                          <div className="w-[325px] h-[39px]  ml-[330px] mt-[-25px]  absolute ">
-                            <p className="pt-2 text-black font-bold text-sm">
-                              Last name
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex justify-between ">
-                          <div className="w-[305px] h-[39px]  mx-4 mt-[10px]  absolute ">
-                            <Input type="enter" placeholder="Marion" />
-                          </div>
-                          <div className="w-[305px] h-[39px]  ml-[330px] mt-[10px]  absolute ">
-                            <Input type="enter" placeholder="Smith" />
-                          </div>
-                        </div>
-
-                        <div className="flex justify-between ">
-                          <div className="w-[325px] h-[39px]  mx-4 mt-[50px]  absolute ">
-                            <p className="pt-2 text-black font-bold text-sm">
-                              Email
-                            </p>
-                          </div>
-                          <div className="w-[325px] h-[39px]  mt-[50px]  ml-[330px]   absolute "></div>
-                        </div>
-                        <div className="flex justify-between ">
-                          <div className="w-[620px] h-[39px]  mx-4 mt-[85px]  absolute ">
-                            <Input
-                              type="enter"
-                              placeholder="MarionSmith@gmail.com"
-                            />
-                          </div>
-                        </div>
-
-                        <div className="flex justify-between ">
-                          <div className="w-[325px] h-[39px]  mx-4 mt-[125px]  absolute ">
-                            <p className="pt-2 text-black font-bold text-sm">
-                              Phone
-                            </p>
-                          </div>
-                          <div className="w-[325px] h-[39px]  ml-[330px]   absolute "></div>
-                        </div>
-                        <div className="flex justify-between ">
-                          <div className="w-[620px] h-[39px]  mx-4 mt-[160px]  absolute ">
-                            <Input type="enter" placeholder="0123456789" />
-                          </div>
-                        </div>
-
-                        <div className="flex justify-between ">
-                          <div className="w-[325px] h-[39px]  mx-4 mt-[200px]  absolute ">
-                            <p className="pt-2 text-black font-bold text-sm">
-                              Address line 1
-                            </p>
-                          </div>
-                          <div className="w-[325px] h-[39px]  ml-[330px]   absolute "></div>
-                        </div>
-                        <div className="flex justify-between ">
-                          <div className="w-[620px] h-[39px]  mx-4 mt-[235px]  absolute ">
-                            <Input type="enter" placeholder="4778 Wave land" />
-                          </div>
-                        </div>
-
-                        <div className="flex justify-between ">
-                          <div className="w-[325px] h-[39px]  mx-4 mt-[275px]  absolute ">
-                            <p className="pt-2 text-black font-bold text-sm">
-                              Address line 2
-                            </p>
-                          </div>
-                          <div className="w-[325px] h-[39px]  ml-[330px]   absolute "></div>
-                        </div>
-                        <div className="flex justify-between ">
-                          <div className="w-[620px] h-[39px]  mx-4 mt-[310px]  absolute ">
-                            <Input type="enter" placeholder="" />
-                          </div>
-                        </div>
-
-                        <div className="flex justify-between ">
-                          <div className="w-[325px] h-[39px]  mx-4 mt-[350px]  absolute ">
-                            <p className="pt-2 text-black font-bold text-sm">
-                              Country
-                            </p>
-                          </div>
-                          <div className="w-[325px] h-[39px]  ml-[330px] mt-[350px]  absolute ">
-                            <p className="pt-2 text-black font-bold text-sm">
-                              State
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="flex justify-between ">
-                          <div className="w-[305px] h-[39px]  mx-4 mt-[385px]  absolute ">
-                            <Select>
-                              <SelectTrigger className="w-[305px]">
-                                <SelectValue placeholder="United States (US)" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectGroup>
-                                  <SelectLabel>United States (US)</SelectLabel>
-                                  <SelectItem
-                                    value="apple"
-                                    className="overflow-x-hidden"
-                                  >
-                                    Apple
-                                  </SelectItem>
-                                  <SelectItem value="banana">Banana</SelectItem>
-                                  <SelectItem value="blueberry">
-                                    Blueberry
-                                  </SelectItem>
-                                  <SelectItem value="grapes">Grapes</SelectItem>
-                                  <SelectItem value="pineapple">
-                                    Pineapple
-                                  </SelectItem>
-                                </SelectGroup>
-                              </SelectContent>
-                            </Select>
-                          </div>
-                          <div className="w-[305px] h-[39px]  ml-[330px] mt-[385px]  absolute ">
-                            <Select>
-                              <SelectTrigger className="w-[305px]">
-                                <SelectValue placeholder="California" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectGroup>
-                                  <SelectLabel>California</SelectLabel>
-                                  <SelectItem
-                                    value="apple"
-                                    className="overflow-x-hidden"
-                                  >
-                                    Apple
-                                  </SelectItem>
-                                  <SelectItem value="banana">Banana</SelectItem>
-                                  <SelectItem value="blueberry">
-                                    Blueberry
-                                  </SelectItem>
-                                  <SelectItem value="grapes">Grapes</SelectItem>
-                                  <SelectItem value="pineapple">
-                                    Pineapple
-                                  </SelectItem>
-                                </SelectGroup>
-                              </SelectContent>
-                            </Select>
-                          </div>
-                        </div>
-
-                        <div className="flex justify-between ">
-                          <div className="w-[325px] h-[39px]  mx-4 mt-[425px]  absolute ">
-                            <p className="pt-2 text-black font-bold text-sm">
-                              City
-                            </p>
-                          </div>
-                          <div className="w-[325px] h-[39px]  ml-[330px] mt-[425px]  absolute ">
-                            <p className="pt-2 text-black font-bold text-sm">
-                              Postcode / Zip code
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="flex justify-between ">
-                          <div className="w-[305px] h-[39px]  mx-4 mt-[455px]  absolute ">
-                            <Input type="enter" placeholder="EI Sobrante" />
-                          </div>
-                          <div className="w-[305px] h-[39px]  ml-[330px] mt-[455px]  absolute ">
-                            <Input type="enter" placeholder="94803" />
-                          </div>
-                        </div>
-
-                        <Button className=" w-[620px] h-[50px] mt-[510px] rounded-lg ml-[15px]">
-                          <SaveIcon className="mr-2 mb-2 w-5 h-5 text-center items-center" />{" "}
-                          SAVE
-                        </Button>
-                      </div>
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-                </AlertDialogContent>
-              </AlertDialog> */}
-
-                {/* <Dialog>
-                  <DialogTrigger asChild>
-                      <button className="inline-flex items-center justify-center ml-32 mr-[10px] mb-1  whitespace-nowrap mt-[-5px] text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-green-500 hover:text-white h-8 w-8 shrink-0 rounded-full">
-                        <svg
-                          width="15"
-                          height="15"
-                          viewBox="0 0 15 15"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-4 w-4"
-                        >
-                          <path
-                            d="M8 2.75C8 2.47386 7.77614 2.25 7.5 2.25C7.22386 2.25 7 2.47386 7 2.75V7H2.75C2.47386 7 2.25 7.22386 2.25 7.5C2.25 7.77614 2.47386 8 2.75 8H7V12.25C7 12.5261 7.22386 12.75 7.5 12.75C7.77614 12.75 8 12.5261 8 12.25V8H12.25C12.5261 8 12.75 7.77614 12.75 7.5C12.75 7.22386 12.5261 7 12.25 7H8V2.75Z"
-                            fill="currentColor"
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                        <span className="sr-only"></span>
-                      </button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-[770px]">
-                    <DialogHeader>
-                      <DialogTitle className="pb-4 items-center">Add new customer</DialogTitle>
-                      <DialogDescription>
-                      </DialogDescription>
-                    </DialogHeader>
-                            <div className='flex w-full justify-between -mt-2'>
-                                <div className='w-[353px]'>
-                                    <p className='text-sm font-bold leading-normal'>First Name</p>
-                                    <Input className='mt-3 border-none bg-[#F7F9FB]' type='text' name='firtname' placeholder="Enter"/>
-                                </div>
-                                <div className='w-[353px]'>
-                                    <p className='text-sm font-bold leading-normal'>Last Name</p>
-                                    <Input className='mt-3 border-none bg-[#F7F9FB]'  type='text' name='lastname'  placeholder="Enter"/>
-                                </div>
-                            </div>
-                            <div className='flex w-full justify-between mt-0'>
-                                <div className='w-[353px]'>
-                                    <p className='text-sm font-bold leading-normal'>Email</p>
-                                    <Input className='mt-2 border-none bg-[#F7F9FB]' type='text'  placeholder="Enter"/>
-                                </div>
-                                <div className=' w-[353px]'>
-                                    <p className='text-sm font-bold leading-normal'>Phone</p>
-                                    <Input className='mt-2 border-none bg-[#F7F9FB]' type='text' name='phone'  placeholder="Enter"/>
-                                </div>
-                            </div>
-                            <div className='flex w-full justify-between mt-0'>
-                                <div className=' w-[100%]'>
-                                    <p className='text-sm font-bold leading-normal'>Adress1</p> 
-                                    <Input className='mt-2 border-none bg-[#F7F9FB]' type='text' name='address'  placeholder="Enter"/>
-                                </div>
-                            </div>
-                            <div className='flex w-full justify-between mt-0'>
-                                <div className=' w-[100%]'>
-                                    <p className='text-sm font-bold leading-normal'>Adress2</p>
-                                    <Input className='mt-2 border-none bg-[#F7F9FB]'  placeholder="Enter"/>
-                                </div>
-                            </div>
-                            <div className='flex w-full justify-between mt-0 '>
-                                <div className=' w-[353px] '>
-                                    <p className='text-sm font-bold leading-normal'>Country</p>
-                                    <Select>
-                                        <SelectTrigger className="w-[353px] h-[44px] outline-none border-none bg-[#F7F9FB] mt-2">
-                                            <SelectValue placeholder="choose" />
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectGroup>
-                                            <SelectLabel></SelectLabel>
-                                            <SelectItem value="apple">Apple</SelectItem>
-                                            <SelectItem value="banana">Banana</SelectItem>
-                                            <SelectItem value="blueberry">Blueberry</SelectItem>
-                                            <SelectItem value="grapes">Grapes</SelectItem>
-                                            <SelectItem value="pineapple">Pineapple</SelectItem>
-                                            </SelectGroup>
-                                        </SelectContent>
-                                    </Select>
-                                </div>
-                                <div className=' w-[353px]'>
-                                    <p className='text-sm font-bold leading-normal'>Sate</p>
-                                    <Select>
-                                        <SelectTrigger className="w-[353px] h-[44px] outline-none border-none bg-[#F7F9FB] mt-2">
-                                            <SelectValue placeholder="choose"/>
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectGroup>
-                                            <SelectLabel></SelectLabel>
-                                            <SelectItem value="apple">Tiểu bang 1</SelectItem>
-                                            <SelectItem value="banana">Tiển bang 2</SelectItem>
-                                            <SelectItem value="blueberry">Tiểu bang 3</SelectItem>
-                                            <SelectItem value="grapes">Tiểu bang 4</SelectItem>
-                                            <SelectItem value="pineapple">Tiểu bang 5</SelectItem>
-                                            </SelectGroup>
-                                        </SelectContent>
-                                    </Select>
-                                </div>
-                            </div>
-                            <div className='flex w-full justify-between mt-0'>
-                                <div className=' w-[353px]'>
-                                    <p className='text-sm font-bold leading-normal'>City</p>
-                                    <Select >
-                                        <SelectTrigger className="w-[353px] h-[44px] outline-none border-none bg-[#F7F9FB] mt-2">
-                                            <SelectValue placeholder="choose"/>
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectGroup>
-                                            <SelectLabel></SelectLabel>
-                                            <SelectItem value="apple">Hà Nội</SelectItem>
-                                            <SelectItem value="banana">Đà Nẵng</SelectItem>
-                                            <SelectItem value="blueberry">Hồ Chí Minh</SelectItem>
-                                            <SelectItem value="grapes">Cần Thơ</SelectItem>
-                                            <SelectItem value="pineapple">Hải Phòng</SelectItem>
-                                            </SelectGroup>
-                                        </SelectContent>
-                                    </Select>
-                                </div>
-                                <div className=' w-[353px]'>
-                                    <p className='text-sm font-bold leading-normal'>Zip Code</p>
-                                    <Select>
-                                        <SelectTrigger className="w-[353px] h-[44px] outline-none border-none bg-[#F7F9FB] mt-2">
-                                            <SelectValue  placeholder="choose"/>
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectGroup>
-                                            <SelectLabel></SelectLabel>
-                                            <SelectItem value="apple">Apple</SelectItem>
-                                            <SelectItem value="banana">Banana</SelectItem>
-                                            <SelectItem value="blueberry">Blueberry</SelectItem>
-                                            <SelectItem value="grapes">Grapes</SelectItem>
-                                            <SelectItem value="pineapple">Pineapple</SelectItem>
-                                            </SelectGroup>
-                                        </SelectContent>
-                                    </Select>
-                                </div>
-                            </div>
-                            <div className='flex w-full justify-between mt-0'>
-                                <div className=' w-[100%]'>
-                                    <div className="flex items-center space-x-2">
-                                        <Checkbox id="add" className='rounded-full'/>
-                                        <Label
-                                            htmlFor="add"
-                                            className="text-black font-normal leading-5 text-[14px]"
-                                        >
-                                            Use same info for shipping
-                                        </Label>
-                                    </div>
-                                </div>
-                            </div>                     
-                    <DialogFooter>
-                    <div className='flex w-full justify-between mt-1'>
-                                <div className=' w-[100%]'>
-                                    <Button className='w-full rounded-lg'> SAVE</Button>
-                                </div>
-                            </div>
-                    </DialogFooter>
-                  </DialogContent>
-                </Dialog> */}
+              
             </div>
 
             {/* table products */}
@@ -771,53 +104,23 @@ export default function Home() {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                {isRowVisible && (
-                  <TableRow>
+                {orderedProducts.map((product, index) => (
+                  <TableRow key={index}>
                     <TableCell className="w-[129px]">
                       <div>
-                        <h5 className="text-sm font-semibold">Coffee</h5>
+                        <h5 className="text-sm font-semibold">{product.name}</h5>
                         <p className="text-xs">Size A, Black</p>
                       </div>
                     </TableCell>
                     <TableCell>
                       <Quantity />
                     </TableCell>
-                    <TableCell className="text-left">100000đ</TableCell>
+                    <TableCell className="text-left">{product.gia}</TableCell>
                     <TableCell className="text-right">
                     <svg  onClick={handleIconClick} width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.877075 7.49988C0.877075 3.84219 3.84222 0.877045 7.49991 0.877045C11.1576 0.877045 14.1227 3.84219 14.1227 7.49988C14.1227 11.1575 11.1576 14.1227 7.49991 14.1227C3.84222 14.1227 0.877075 11.1575 0.877075 7.49988ZM7.49991 1.82704C4.36689 1.82704 1.82708 4.36686 1.82708 7.49988C1.82708 10.6329 4.36689 13.1727 7.49991 13.1727C10.6329 13.1727 13.1727 10.6329 13.1727 7.49988C13.1727 4.36686 10.6329 1.82704 7.49991 1.82704ZM9.85358 5.14644C10.0488 5.3417 10.0488 5.65829 9.85358 5.85355L8.20713 7.49999L9.85358 9.14644C10.0488 9.3417 10.0488 9.65829 9.85358 9.85355C9.65832 10.0488 9.34173 10.0488 9.14647 9.85355L7.50002 8.2071L5.85358 9.85355C5.65832 10.0488 5.34173 10.0488 5.14647 9.85355C4.95121 9.65829 4.95121 9.3417 5.14647 9.14644L6.79292 7.49999L5.14647 5.85355C4.95121 5.65829 4.95121 5.3417 5.14647 5.14644C5.34173 4.95118 5.65832 4.95118 5.85358 5.14644L7.50002 6.79289L9.14647 5.14644C9.34173 4.95118 9.65832 4.95118 9.85358 5.14644Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
                     </TableCell>
                   </TableRow>
-                )}
-                  <TableRow>
-                    <TableCell className="w-[129px]">
-                      <div>
-                        <h5 className="text-sm font-semibold">Coffee</h5>
-                        <p className="text-xs">Size A, Black</p>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <Quantity />
-                    </TableCell>
-                    <TableCell className="text-left">1000đ</TableCell>
-                    <TableCell className="text-right">
-                    <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.877075 7.49988C0.877075 3.84219 3.84222 0.877045 7.49991 0.877045C11.1576 0.877045 14.1227 3.84219 14.1227 7.49988C14.1227 11.1575 11.1576 14.1227 7.49991 14.1227C3.84222 14.1227 0.877075 11.1575 0.877075 7.49988ZM7.49991 1.82704C4.36689 1.82704 1.82708 4.36686 1.82708 7.49988C1.82708 10.6329 4.36689 13.1727 7.49991 13.1727C10.6329 13.1727 13.1727 10.6329 13.1727 7.49988C13.1727 4.36686 10.6329 1.82704 7.49991 1.82704ZM9.85358 5.14644C10.0488 5.3417 10.0488 5.65829 9.85358 5.85355L8.20713 7.49999L9.85358 9.14644C10.0488 9.3417 10.0488 9.65829 9.85358 9.85355C9.65832 10.0488 9.34173 10.0488 9.14647 9.85355L7.50002 8.2071L5.85358 9.85355C5.65832 10.0488 5.34173 10.0488 5.14647 9.85355C4.95121 9.65829 4.95121 9.3417 5.14647 9.14644L6.79292 7.49999L5.14647 5.85355C4.95121 5.65829 4.95121 5.3417 5.14647 5.14644C5.34173 4.95118 5.65832 4.95118 5.85358 5.14644L7.50002 6.79289L9.14647 5.14644C9.34173 4.95118 9.65832 4.95118 9.85358 5.14644Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="w-[129px]">
-                      <div>
-                        <h5 className="text-sm font-semibold">Coffee</h5>
-                        <p className="text-xs">Size A, Black</p>
-                      </div>
-                    </TableCell>
-                    <TableCell className="">
-                      <Quantity />
-                    </TableCell>
-                    <TableCell className="text-left">1000đ</TableCell>
-                    <TableCell className="text-right">
-                    <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.877075 7.49988C0.877075 3.84219 3.84222 0.877045 7.49991 0.877045C11.1576 0.877045 14.1227 3.84219 14.1227 7.49988C14.1227 11.1575 11.1576 14.1227 7.49991 14.1227C3.84222 14.1227 0.877075 11.1575 0.877075 7.49988ZM7.49991 1.82704C4.36689 1.82704 1.82708 4.36686 1.82708 7.49988C1.82708 10.6329 4.36689 13.1727 7.49991 13.1727C10.6329 13.1727 13.1727 10.6329 13.1727 7.49988C13.1727 4.36686 10.6329 1.82704 7.49991 1.82704ZM9.85358 5.14644C10.0488 5.3417 10.0488 5.65829 9.85358 5.85355L8.20713 7.49999L9.85358 9.14644C10.0488 9.3417 10.0488 9.65829 9.85358 9.85355C9.65832 10.0488 9.34173 10.0488 9.14647 9.85355L7.50002 8.2071L5.85358 9.85355C5.65832 10.0488 5.34173 10.0488 5.14647 9.85355C4.95121 9.65829 4.95121 9.3417 5.14647 9.14644L6.79292 7.49999L5.14647 5.85355C4.95121 5.65829 4.95121 5.3417 5.14647 5.14644C5.34173 4.95118 5.65832 4.95118 5.85358 5.14644L7.50002 6.79289L9.14647 5.14644C9.34173 4.95118 9.65832 4.95118 9.85358 5.14644Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-                    </TableCell>
-                  </TableRow>
+                  ))}
                
                   
                 </TableBody>
@@ -994,27 +297,6 @@ export default function Home() {
                               <Input type="enter" placeholder="Enter" className="border-none bg-[#F5F5F5] "/>
                             </div>
                           </div>
-
-                          {/* <div className="flex justify-between ">
-                            <div className="w-[355px] h-[39px]  mx-4 mt-[80px]  absolute "></div>
-
-                            <div className="w-[230px] h-[39px]  ml-[420px] mt-[95px]  absolute ">
-                              <p className="pt-2 text-black font-bold text-sm">
-                                Amount to pay
-                              </p>
-                            </div>
-                          </div> */}
-
-                          {/* <div className="flex justify-between ">
-                            <div className="w-[355px] h-[39px]  mx-4 mt-[125px]  absolute "></div>
-                            <div className="w-[230px] h-[39px]  ml-[420px] mt-[135px]  absolute ">
-                              <Input
-                                type="enter"
-                                placeholder="500.000.000đ"
-                                className="placeholder:font-bold placeholder:text-right placeholder:text-[#71B02F] bg-[#E7F3DA] "
-                              />
-                            </div>
-                          </div> */}
 
                           <div className="w-[635px] h-[245px]  mx-4 mt-[110px]   absolute rounded-lg">
                             <div className=" rounded-lg">
@@ -1502,8 +784,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </nav>
   );
 };
 
-
+export default OrderTable;
