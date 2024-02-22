@@ -53,31 +53,24 @@ interface Product {
 
   interface OrderTableProps {
     orderedProducts: Product[];
+    removeFromOrder: (productId: number) => void;
   }
 
-const OrderTable: React.FC<OrderTableProps> = ({ orderedProducts }) => {
+  const calculateTotalPrice = (products: Product[]): number => {
+    return products.reduce((total, product) => {
+      return total + parseInt(product.gia);
+    }, 0);
+  };
+
+const OrderTable: React.FC<OrderTableProps> = ({ orderedProducts, removeFromOrder  }) => {
     const [activeItem, setActiveItem] = React.useState(null);
 
     const handleItemClick = (itemId: any | React.SetStateAction<null>) => {
       setActiveItem(itemId === activeItem ? null : itemId);
     };
 
+    const totalPrice = calculateTotalPrice(orderedProducts);
   
-    const [open, setOpen] = React.useState(false);
-    const handleClose = () => {
-      setOpen(false);
-    };
-  
-    function handleCheckChange(): void {
-      throw new Error("Function not implemented.");
-    }
-  
-    //row
-    const [isRowVisible, setIsRowVisible] = React.useState(true);
-    const handleIconClick = () => {
-      setIsRowVisible(false);
-    };
-
   return (
     <div className="w-[400px] pt-[10px]  ml-[10px] h-screen flex  flex-col">
         <div className=" flex-grow h-full bg-white rounded-lg mb-[35px]">
@@ -117,7 +110,10 @@ const OrderTable: React.FC<OrderTableProps> = ({ orderedProducts }) => {
                     </TableCell>
                     <TableCell className="text-left">{product.gia}</TableCell>
                     <TableCell className="text-right">
-                    <svg  onClick={handleIconClick} width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.877075 7.49988C0.877075 3.84219 3.84222 0.877045 7.49991 0.877045C11.1576 0.877045 14.1227 3.84219 14.1227 7.49988C14.1227 11.1575 11.1576 14.1227 7.49991 14.1227C3.84222 14.1227 0.877075 11.1575 0.877075 7.49988ZM7.49991 1.82704C4.36689 1.82704 1.82708 4.36686 1.82708 7.49988C1.82708 10.6329 4.36689 13.1727 7.49991 13.1727C10.6329 13.1727 13.1727 10.6329 13.1727 7.49988C13.1727 4.36686 10.6329 1.82704 7.49991 1.82704ZM9.85358 5.14644C10.0488 5.3417 10.0488 5.65829 9.85358 5.85355L8.20713 7.49999L9.85358 9.14644C10.0488 9.3417 10.0488 9.65829 9.85358 9.85355C9.65832 10.0488 9.34173 10.0488 9.14647 9.85355L7.50002 8.2071L5.85358 9.85355C5.65832 10.0488 5.34173 10.0488 5.14647 9.85355C4.95121 9.65829 4.95121 9.3417 5.14647 9.14644L6.79292 7.49999L5.14647 5.85355C4.95121 5.65829 4.95121 5.3417 5.14647 5.14644C5.34173 4.95118 5.65832 4.95118 5.85358 5.14644L7.50002 6.79289L9.14647 5.14644C9.34173 4.95118 9.65832 4.95118 9.85358 5.14644Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    <svg  onClick={() => removeFromOrder(product.id)} className='text-[#555] opacity-50' width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.877075 7.49988C0.877075 3.84219 3.84222 0.877045 7.49991 0.877045C11.1576 0.877045 14.1227 3.84219 14.1227 7.49988C14.1227 11.1575 11.1576 14.1227 7.49991 14.1227C3.84222 14.1227 0.877075 11.1575 0.877075 7.49988ZM7.49991 1.82704C4.36689 1.82704 1.82708 4.36686 1.82708 7.49988C1.82708 10.6329 4.36689 13.1727 7.49991 13.1727C10.6329 13.1727 13.1727 10.6329 13.1727 7.49988C13.1727 4.36686 10.6329 1.82704 7.49991 1.82704ZM9.85358 5.14644C10.0488 5.3417 10.0488 5.65829 9.85358 5.85355L8.20713 7.49999L9.85358 9.14644C10.0488 9.3417 10.0488 9.65829 9.85358 9.85355C9.65832 10.0488 9.34173 10.0488 9.14647 9.85355L7.50002 8.2071L5.85358 9.85355C5.65832 10.0488 5.34173 10.0488 5.14647 9.85355C4.95121 9.65829 4.95121 9.3417 5.14647 9.14644L6.79292 7.49999L5.14647 5.85355C4.95121 5.65829 4.95121 5.3417 5.14647 5.14644C5.34173 4.95118 5.65832 4.95118 5.85358 5.14644L7.50002 6.79289L9.14647 5.14644C9.34173 4.95118 9.65832 4.95118 9.85358 5.14644Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    {/* <svg  onClick={() => removeFromOrder(product.id)} xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M8.99999 17.9583C7.2281 17.9603 5.4955 17.4362 4.02177 16.4525C2.54805 15.4687 1.39956 14.0696 0.72186 12.4324C0.0441605 10.7953 -0.132236 8.99376 0.215027 7.25622C0.562291 5.51869 1.41758 3.92337 2.67249 2.67245C4.35065 0.994293 6.62672 0.0515137 8.99999 0.0515137C11.3733 0.0515137 13.6493 0.994293 15.3275 2.67245C17.0057 4.35061 17.9484 6.62668 17.9484 8.99995C17.9484 11.3732 17.0057 13.6493 15.3275 15.3274C14.4991 16.1626 13.5134 16.8251 12.4273 17.2766C11.3411 17.7282 10.1762 17.9599 8.99999 17.9583ZM8.99999 1.29162C7.47543 1.29162 5.9851 1.7437 4.71747 2.59071C3.44984 3.43771 2.46185 4.64158 1.87842 6.0501C1.295 7.45861 1.14235 9.0085 1.43977 10.5038C1.7372 11.999 2.47135 13.3725 3.54938 14.4506C4.62741 15.5286 6.0009 16.2627 7.49617 16.5602C8.99144 16.8576 10.5413 16.7049 11.9498 16.1215C13.3584 15.5381 14.5622 14.5501 15.4092 13.2825C16.2562 12.0148 16.7083 10.5245 16.7083 8.99995C16.7061 6.95625 15.8933 4.99689 14.4482 3.55177C13.0031 2.10666 11.0437 1.29382 8.99999 1.29162ZM6.64166 11.9833C6.5596 11.9833 6.47834 11.9671 6.40255 11.9357C6.32675 11.9042 6.25792 11.8581 6.19999 11.7999C6.14191 11.7419 6.09584 11.673 6.06441 11.5971C6.03297 11.5213 6.01679 11.44 6.01679 11.3579C6.01679 11.2758 6.03297 11.1945 6.06441 11.1186C6.09584 11.0427 6.14191 10.9738 6.19999 10.9158L10.9167 6.19995C10.9747 6.14187 11.0436 6.0958 11.1195 6.06436C11.1953 6.03293 11.2766 6.01675 11.3587 6.01675C11.4409 6.01675 11.5222 6.03293 11.598 6.06436C11.6739 6.0958 11.7428 6.14187 11.8008 6.19995C11.9178 6.31725 11.9834 6.47616 11.9832 6.64179C11.983 6.80742 11.9171 6.96621 11.8 7.08328L7.08333 11.7999C7.0254 11.8581 6.95657 11.9042 6.88077 11.9357C6.80498 11.9671 6.72372 11.9833 6.64166 11.9833ZM11.3583 11.9833C11.2763 11.9833 11.195 11.9671 11.1192 11.9357C11.0434 11.9042 10.9746 11.8581 10.9167 11.7999L6.19999 7.08328C6.08295 6.9661 6.01721 6.80724 6.01721 6.64162C6.01721 6.47599 6.08295 6.31714 6.19999 6.19995C6.31718 6.08291 6.47603 6.01717 6.64166 6.01717C6.80729 6.01717 6.96614 6.08291 7.08333 6.19995L11.8 10.9166C11.8873 11.004 11.9467 11.1153 11.9708 11.2365C11.9949 11.3577 11.9825 11.4832 11.9352 11.5974C11.888 11.7115 11.808 11.8091 11.7053 11.8778C11.6026 11.9465 11.4819 11.9832 11.3583 11.9833Z" fill="black"/>
+                    </svg> */}
                     </TableCell>
                   </TableRow>
                   ))}
@@ -141,7 +137,7 @@ const OrderTable: React.FC<OrderTableProps> = ({ orderedProducts }) => {
                   <TableHead></TableHead>
                   <TableHead></TableHead>
                   <TableHead className="text-right pr-3 text-base text-black font-medium">
-                    116.000 đ
+                  {totalPrice} đ
                   </TableHead>
                 </TableRow>
               </TableHeader>
@@ -788,3 +784,7 @@ const OrderTable: React.FC<OrderTableProps> = ({ orderedProducts }) => {
 };
 
 export default OrderTable;
+
+
+//de tinh tong tien cua cac san pham da duowc add vao trong gio hang ta can
+// 1. lay duoc gia cua tat ca cac san pham thong qua id

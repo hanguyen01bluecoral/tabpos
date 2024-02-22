@@ -17,7 +17,7 @@ interface Item {
 }
 
 const sampleData: Item[] = [
-    { title: 'Nguyen le (500 Poins)', 
+    { title: 'Nguyen le', 
         firtname: 'Nguyen', 
         lastname: 'Le', 
         email: 'nguyen@gmail.com',
@@ -28,7 +28,7 @@ const sampleData: Item[] = [
         city: 'Hồ Chí Minh',
         zipcode: '#454545' 
     },
-    { title: 'Loc Nguyen (700 Poins)', 
+    { title: 'Loc Nguyen', 
         firtname: 'Le Van', 
         lastname: 'Loc', 
         email: 'Loc@gmail.com',
@@ -39,10 +39,10 @@ const sampleData: Item[] = [
         city: 'Đồng Tháp',
         zipcode: '0123' 
     },
-    { title: 'Hoang Khanh An (500 Poins)', 
+    { title: 'Hoang Khanh An', 
         firtname: 'Khanh An', 
         lastname: 'Hoang', 
-        email: 'An@gmail.com',
+        email: 'khanhan@gmail.com',
         phone: '0123456789', 
         address: '55 Phạm Ngũ Lão', 
         country: 'Viet Nam',
@@ -50,10 +50,10 @@ const sampleData: Item[] = [
         city: 'Cần Thơ',
         zipcode: '01233333' 
     },
-    { title: 'Hoang Nam (500 Poins)', 
+    { title: 'Hoang Nam', 
         firtname: 'Hoang', 
         lastname: 'Nam', 
-        email: 'nguyen@gmail.com',
+        email: 'hoangnam@gmail.com',
         phone: '0123456789', 
         address: '100 Lê Văn Sỹ', 
         country: 'Viet Nam',
@@ -61,10 +61,10 @@ const sampleData: Item[] = [
         city: 'Long An',
         zipcode: '0123999' 
     },
-    { title: 'Dinh Tien Hoang (500 Poins)', 
+    { title: 'Dinh Tien Hoang', 
         firtname: 'Dinh', 
         lastname: 'Tien Hoang', 
-        email: 'nguyen@gmail.com',
+        email: 'hoangtien@gmail.com',
         phone: '0123456789', 
         address: '252 Lý Chính Thắng', 
         country: 'Viet Nam',
@@ -88,11 +88,11 @@ const DemoAddCustomes: React.FC = () => {
   };
 
   return (
-    <div className="mt-7 w-[800px] flex justify-between ">
-      <div className="">
+    <div className="mt-7 w-[100%] flex justify-between ">
+      <div className="w-[calc(100%-400px)]">
       <ListTable data={sampleData} onRowClick={handleRowClick} />
       </div>
-      <div className=''>
+      <div className='w-[400px] h-screen flex-grow'>
       <DetailView selectedItem={selectedItem} onSave={handleSave} />
       </div>
     </div>

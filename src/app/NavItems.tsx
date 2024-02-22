@@ -34,7 +34,7 @@ const NavItems: React.FC = () => {
             <span className="radio-label flex">
               <div className="flex items-center">
                     <p className="text-[18px]"> All </p>
-                    <div className="w-full ml-[6px] text-[12px] px-[6px] bg-[#CCC] rounded-[40%] box">
+                    <div className="w-full ml-[6px] text-[10px] px-[6px] bg-[#CCC] rounded-[40%] box">
                       12
                     </div>
               </div>
@@ -46,7 +46,7 @@ const NavItems: React.FC = () => {
             <span className="radio-label flex">
               <div className="flex items-center">
                     <p className="text-[18px]"> Appeztilazes </p>
-                    <div className="w-full ml-[6px] text-[12px] px-[6px] bg-[#CCC] rounded-[40%] box">
+                    <div className="w-full ml-[6px] text-[10px] px-[6px] bg-[#CCC] rounded-[40%] box">
                       12
                     </div>
               </div>
@@ -57,7 +57,7 @@ const NavItems: React.FC = () => {
             <span className="radio-label flex">
               <div className="flex items-center">
                     <p className="text-[18px]"> Shushi </p>
-                    <div className="w-full ml-[6px] text-[12px] px-[6px] bg-[#CCC] rounded-[40%] box">
+                    <div className="w-full ml-[6px] text-[10px] px-[6px] bg-[#CCC] rounded-[40%] box">
                       
                     </div>
               </div>
@@ -69,7 +69,7 @@ const NavItems: React.FC = () => {
             <span className="radio-label flex">
               <div className="flex items-center">
                     <p className="text-[18px]"> Drink </p>
-                    <div className="w-full ml-[6px] text-[12px] px-[6px] bg-[#CCC] rounded-[40%] box box">
+                    <div className="w-full ml-[6px] text-[10px] px-[6px] bg-[#CCC] rounded-[40%] box box">
                       12
                     </div>
               </div>
@@ -81,7 +81,7 @@ const NavItems: React.FC = () => {
             <span className="radio-label flex">
               <div className="flex items-center">
                     <p className="text-[18px]"> Ramen </p>
-                    <div className="w-full ml-[6px] text-[12px] px-[6px] bg-[#CCC] rounded-[40%] box">
+                    <div className="w-full ml-[6px] text-[10px] px-[6px] bg-[#CCC] rounded-[40%] box">
                       12
                     </div>
               </div>
@@ -93,7 +93,7 @@ const NavItems: React.FC = () => {
             <span className="radio-label flex">
               <div className="flex items-center">
                     <p className="text-[18px]"> Vetegartions </p>
-                    <div className="w-full ml-[6px] text-[12px] px-[6px] bg-[#CCC] rounded-[40%] box">
+                    <div className="w-full ml-[6px] text-[10px] px-[6px] bg-[#CCC] rounded-[40%] box">
                       8
                     </div>
               </div>
@@ -105,7 +105,7 @@ const NavItems: React.FC = () => {
             <span className="radio-label flex">
               <div className="flex items-center">
                     <p className="text-[18px]"> Desserts </p>
-                    <div className="w-full ml-[6px] text-[12px] px-[6px] bg-[#CCC] rounded-[40%] box">
+                    <div className="w-full ml-[6px] text-[10px] px-[6px] bg-[#CCC] rounded-[40%] box">
                       3
                     </div>
               </div>
@@ -116,7 +116,7 @@ const NavItems: React.FC = () => {
               <span className="radio-label flex">
                   <div className="flex items-center">
                       <p className="text-[18px]">TShirts</p>
-                      <div className="w-full ml-[6px] text-[12px] px-[6px] bg-[#CCC] rounded-[40%] box">
+                      <div className="w-full ml-[6px] text-[10px] px-[6px] bg-[#CCC] rounded-[40%] box">
                           3
                       </div>
                   </div>

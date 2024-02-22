@@ -28,7 +28,7 @@ input[type="radio"] {
 
   input[type="radio"]:checked + .radio-label .box{
   
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0.20);
     color: white;
   }
   

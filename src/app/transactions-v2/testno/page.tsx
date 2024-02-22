@@ -89,11 +89,11 @@ const DemoOrderNotPaid: React.FC = () => {
   };
 
   return (
-    <div className="w-full flex  ">
+    <div className=" w-full flex  ">
       <div className="w-[370px]">
         <ListTableOrder data={sampleData} onRowClick={handleRowClick} />
       </div>
-      <div className='-mt-[106px] w-[calc(100%-400px)]'>
+      <div className=' w-[calc(100%-370px)]'>
         <DetailView1 selectedItem={selectedItem} onSave={handleSave} />
       </div>
     </div>
@@ -101,3 +101,5 @@ const DemoOrderNotPaid: React.FC = () => {
 };
 
 export default DemoOrderNotPaid;
+
+
