@@ -11,7 +11,9 @@ interface ListTableProps {
     country: string;
     sate: string;
     city: string;
-    zipcode: string; }>;
+    zipcode: string;
+    poins: string;
+  }>;
   onRowClick: (item: {  title: string;
     firtname: string;
     lastname: string;
@@ -21,17 +23,36 @@ interface ListTableProps {
     country: string;
     sate: string;
     city: string;
-    zipcode: string;}) => void;
+    zipcode: string;
+    poins: string;}) => void;
 }
+const ITEMS_PER_PAGE = 8; //so item duoc hien thi tren trang
 
 const ListTable: React.FC<ListTableProps> = ({ data, onRowClick }) => {
+  const [currentPage, setCurrentPage] = React.useState(1);
   //ham xac dinh khi duoc active 
+  const [activeItem, setActiveItem] = React.useState(null);
+  const handleItemClick = (itemId: any | React.SetStateAction<null>) => {
+    setActiveItem(itemId === activeItem ? null : itemId);
+  };
+
+
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const paginatedData = data.slice(startIndex, endIndex);
+
+  const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    console.log(page)
+  };
   return (
-    <table>
-      <tbody>
-        {data.map((item, index) => (
+    <div>
+       <div>
+        {paginatedData.map((item, index) => (
             <div key={index} onClick={() => onRowClick(item)} className='cursor-pointer'>
-                <div className="w-[670px] h-[65px] p-4 bg-white rounded border-b border-zinc-100 justify-start items-center inline-flex hover:bg-[#F7F9FB]">
+                <div className={`w-full h-[72px] p-4  rounded border-b border-zinc-100 justify-start items-center inline-flex hover:bg-[#F7F9FB] ${ activeItem === index ? 'bg-[#E7F3DA] border border-green-600' : ''}`} onClick={() => handleItemClick(index)}>
                     <div className='flex'>
                         <div className="w-8 h-8 rounded-full bg-slate-300">
                         <svg
@@ -44,7 +65,7 @@ const ListTable: React.FC<ListTableProps> = ({ data, onRowClick }) => {
 
                         </div>
                         <div className='ml-2'>
-                            <p className='text-black text-[14px] font-medium leading-normal items-center'>{item.title} <span className='w-full h-full px-1 py-[2px] rounded-full bg-[#e7e4e4]'>500 poins</span></p>
+                            <p className='text-black text-[14px] font-medium leading-normal items-center'>{item.title} <span className='w-full h-full px-1 py-[2px] rounded-full bg-[#e7e4e4]'>{item.poins}</span></p>
                             <div className='flex mt-1 items-center'>
                               <svg
                                 className='mr-1' 
@@ -70,8 +91,24 @@ const ListTable: React.FC<ListTableProps> = ({ data, onRowClick }) => {
                 </div>
             </div>
         ))}
-      </tbody>
-    </table>
+      </div>
+       {totalPages > 1 && (
+        <div className="pagination mt-1">
+          {Array.from({ length: totalPages }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => handlePageChange(index + 1)}
+              className={`w-[50px] h-[40px] ml-3 first:ml-0 border hover:bg-[#71B02F] hover:text-white ${
+                currentPage === index + 1 ? 'active' : ''
+              }`}
+            >
+              {index + 1}
+              
+            </button>
+          ))}
+        </div>
+      )} 
+    </div>
   );
 };
 

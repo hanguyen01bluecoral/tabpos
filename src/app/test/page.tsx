@@ -14,6 +14,7 @@ interface Item {
   sate: string;
   city: string;
   zipcode: string;
+  poins: string;
 }
 
 const sampleData: Item[] = [
@@ -26,7 +27,8 @@ const sampleData: Item[] = [
         country: 'Viet Nam',
         sate: '',
         city: 'Hồ Chí Minh',
-        zipcode: '#454545' 
+        zipcode: '#454545',
+        poins: '500 poins' 
     },
     { title: 'Loc Nguyen', 
         firtname: 'Le Van', 
@@ -37,7 +39,8 @@ const sampleData: Item[] = [
         country: 'Viet Nam',
         sate: '',
         city: 'Đồng Tháp',
-        zipcode: '0123' 
+        zipcode: '0123',
+        poins: '5000 poins'
     },
     { title: 'Hoang Khanh An', 
         firtname: 'Khanh An', 
@@ -48,7 +51,8 @@ const sampleData: Item[] = [
         country: 'Viet Nam',
         sate: '',
         city: 'Cần Thơ',
-        zipcode: '01233333' 
+        zipcode: '01233333',
+        poins: '50000 poins' 
     },
     { title: 'Hoang Nam', 
         firtname: 'Hoang', 
@@ -59,7 +63,8 @@ const sampleData: Item[] = [
         country: 'Viet Nam',
         sate: '',
         city: 'Long An',
-        zipcode: '0123999' 
+        zipcode: '0123999',
+        poins: '50 poins' 
     },
     { title: 'Dinh Tien Hoang', 
         firtname: 'Dinh', 
@@ -70,7 +75,56 @@ const sampleData: Item[] = [
         country: 'Viet Nam',
         sate: '',
         city: 'Đà Nẵng',
-        zipcode: '01236888' 
+        zipcode: '01236888',
+        poins: '500 poins' 
+    },
+    { title: 'A Nguyen', 
+        firtname: 'Nguyen', 
+        lastname: 'Van A', 
+        email: 'anguyen@gmail.com',
+        phone: '0123456789', 
+        address: '252 Lý Chính Thắng', 
+        country: 'Viet Nam',
+        sate: '',
+        city: 'Đà Nẵng',
+        zipcode: '01236888',
+        poins: '500 poins' 
+    },
+    { title: 'Nguyen Anh Hung Hoang', 
+        firtname: 'Anh', 
+        lastname: 'Hung Hoang', 
+        email: 'hoangtien@gmail.com',
+        phone: '0123456789', 
+        address: '252 Lý Chính Thắng', 
+        country: 'Viet Nam',
+        sate: '',
+        city: 'Đà Nẵng',
+        zipcode: '01236888',
+        poins: '500 poins' 
+    },
+    { title: 'Tran Van B', 
+        firtname: 'Tran', 
+        lastname: 'Van B', 
+        email: 'hoangtien@gmail.com',
+        phone: '0123456789', 
+        address: '252 Lý Chính Thắng', 
+        country: 'Viet Nam',
+        sate: '',
+        city: 'Đà Nẵng',
+        zipcode: '01236888',
+        poins: '500 poins' 
+    },
+    { title: 'Tran Van B', 
+        firtname: 'Tran', 
+        lastname: 'Van B', 
+        email: 'hoangtien@gmail.com',
+        phone: '0123456789', 
+        address: '252 Lý Chính Thắng', 
+        country: 'Viet Nam',
+        sate: '',
+        city: 'Đà Nẵng',
+        zipcode: '01236888',
+        poins: '500 poins' 
     },
 ];
 
@@ -88,11 +142,11 @@ const DemoAddCustomes: React.FC = () => {
   };
 
   return (
-    <div className="mt-7 w-[100%] flex justify-between ">
-      <div className="w-[calc(100%-400px)]">
+    <div className="mt-5 w-[100%] flex justify-between ">
+      <div className="flex-grow bg-white">
       <ListTable data={sampleData} onRowClick={handleRowClick} />
       </div>
-      <div className='w-[400px] h-screen flex-grow'>
+      <div className='w-[400px] h-screen '>
       <DetailView selectedItem={selectedItem} onSave={handleSave} />
       </div>
     </div>
@@ -100,3 +154,4 @@ const DemoAddCustomes: React.FC = () => {
 };
 
 export default DemoAddCustomes;
+

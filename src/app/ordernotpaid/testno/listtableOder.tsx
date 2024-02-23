@@ -68,7 +68,7 @@ const ListTableOrder: React.FC<ListTableProps> = ({ data, onRowClick }) => {
         </div>
         {paginatedData.map((item, index) => (
             <div key={index} onClick={() => onRowClick(item)} className='cursor-pointer bg-white  w-full '>
-                <div className={`w-[370px] p-2.5 border-b justify-between items-start inline-flex hover:bg-lime-50 hover:text-[#71B02F] ${ activeItem === index ? 'bg-lime-50 text-[#71B02F]' : ''}`} onClick={() => handleItemClick(index)}>
+                <div className={`w-[370px] p-2.5 border-b justify-between items-start inline-flex hover:bg-[#F7F9FB]  ${ activeItem === index ? 'bg-[#E7F3DA]' : ''}`} onClick={() => handleItemClick(index)}>
                     <div className="flex-col justify-start items-start gap-[5px] inline-flex">
                     <b className="text-sm font-['Inter']">{item.title}</b>
                       <div className="text-[#555] text-xs font-normal ">
